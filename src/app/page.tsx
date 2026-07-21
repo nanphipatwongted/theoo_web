@@ -22,6 +22,34 @@ const SHADES = [
   { id: "105", name: "Rosewood" },
 ];
 
+function ShadeSwatch({ shade }: { shade: (typeof SHADES)[number] }) {
+  return (
+    <a
+      href={SHOPEE_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex flex-col items-center px-6"
+    >
+      <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-surface shadow-xl transition-transform duration-500 group-hover:scale-110 group-hover:z-10">
+        <Image
+          src={`/images/swatch${shade.id}.PNG`}
+          alt={`${shade.name} swatch`}
+          fill
+          sizes="(max-width: 768px) 192px, 256px"
+          quality={90}
+          className="object-cover"
+        />
+      </div>
+      <p className="mt-4 font-headline-md text-headline-md text-sm uppercase tracking-wider">
+        {shade.name}
+      </p>
+      <p className="font-body-sm text-body-sm text-on-surface-variant">
+        {shade.id}
+      </p>
+    </a>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -373,35 +401,17 @@ export default function Home() {
               Shades
             </h2>
           </div>
-          <div className="flex flex-wrap justify-center items-end gap-y-14 editorial-reveal">
-            {SHADES.map((shade, i) => (
-              <a
-                key={shade.id}
-                href={SHOPEE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`group flex flex-col items-center px-6 pt-6 transition-transform duration-500 ${
-                  i % 2 === 1 ? "-translate-y-10" : ""
-                }`}
-              >
-                <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 -ml-10 first:ml-0 rounded-full overflow-hidden border-4 border-surface shadow-xl transition-transform duration-500 group-hover:scale-110 group-hover:z-10">
-                  <Image
-                    src={`/images/swatch${shade.id}.PNG`}
-                    alt={`${shade.name} swatch`}
-                    fill
-                    sizes="(max-width: 768px) 192px, 256px"
-                    quality={90}
-                    className="object-cover"
-                  />
-                </div>
-                <p className="mt-4 font-headline-md text-headline-md text-sm uppercase tracking-wider">
-                  {shade.name}
-                </p>
-                <p className="font-body-sm text-body-sm text-on-surface-variant">
-                  {shade.id}
-                </p>
-              </a>
-            ))}
+          <div className="flex flex-col items-center editorial-reveal">
+            <div className="flex flex-wrap justify-center">
+              {SHADES.slice(0, 3).map((shade) => (
+                <ShadeSwatch key={shade.id} shade={shade} />
+              ))}
+            </div>
+            <div className="flex flex-wrap justify-center -mt-8 md:-mt-12">
+              {SHADES.slice(3, 5).map((shade) => (
+                <ShadeSwatch key={shade.id} shade={shade} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
