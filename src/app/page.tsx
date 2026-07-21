@@ -78,7 +78,7 @@ export default function Home() {
       {/* TopNavBar */}
       <nav className="fixed top-0 w-full z-50 nav-glass transition-transform duration-500">
         <div className="flex justify-between items-center w-full px-margin-desktop py-6 max-w-[1440px] mx-auto">
-          <div className="font-headline-lg text-headline-lg tracking-tighter text-on-surface">
+          <div className="font-headline-lg text-headline-lg tracking-[-0.094em] text-on-surface">
             theoo
           </div>
           <div className="hidden md:flex items-center gap-8">

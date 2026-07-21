@@ -91,7 +91,7 @@ export function PageSearch() {
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={(e) => e.key === "Escape" && close()}
           placeholder="Search this page..."
-          className="w-full rounded-full border border-outline-variant bg-surface px-4 py-1.5 font-body-sm text-body-sm text-on-surface outline-none focus:border-primary"
+          className="w-full rounded-full bg-surface px-4 py-1.5 font-body-sm text-body-sm text-on-surface outline-none shadow-sm"
         />
       </div>
       <button
