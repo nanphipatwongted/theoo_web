@@ -155,12 +155,12 @@ export default function Home() {
       >
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero.jpg"
+            src="/images/19.jpg"
             alt="theoo Mood Lip Gloss"
             fill
             priority
             sizes="100vw"
-            quality={90}
+            quality={100}
             className="object-cover hero-zoom"
           />
           <div className="absolute inset-0 bg-black/5" />
