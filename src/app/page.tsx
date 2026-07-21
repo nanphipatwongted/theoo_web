@@ -2,6 +2,8 @@ import Image from "next/image";
 import { ChevronDown, Clock, Droplet, Search, ShoppingBag, Sparkles } from "lucide-react";
 import { ScrollEffects } from "@/components/scroll-effects";
 
+const SHOPEE_URL = "https://s.shopee.co.th/4qEDJVMei2";
+
 const SHADES = [
   {
     id: "101",
@@ -82,9 +84,14 @@ export default function Home() {
             <button className="hover:opacity-70 transition-opacity duration-300">
               <Search className="w-6 h-6" />
             </button>
-            <button className="hover:opacity-70 transition-opacity duration-300">
+            <a
+              href={SHOPEE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-70 transition-opacity duration-300"
+            >
               <ShoppingBag className="w-6 h-6" />
-            </button>
+            </a>
           </div>
         </div>
       </nav>
@@ -110,9 +117,14 @@ export default function Home() {
             Sensory minimalism for your daily ritual.
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <button className="px-10 py-4 bg-primary text-white font-label-md text-label-md tracking-widest uppercase hover:bg-dark-accent transition-all duration-500 shadow-xl">
+            <a
+              href={SHOPEE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-10 py-4 bg-primary text-white font-label-md text-label-md tracking-widest uppercase hover:bg-dark-accent transition-all duration-500 shadow-xl"
+            >
               Explore Shades
-            </button>
+            </a>
           </div>
         </div>
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-primary animate-bounce">
@@ -298,16 +310,21 @@ export default function Home() {
             </div>
             <a
               className="font-label-md text-label-md text-primary-container hover:text-primary transition-colors underline underline-offset-8"
-              href="#"
+              href={SHOPEE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Shop All
             </a>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-gutter">
             {SHADES.map((shade, i) => (
-              <div
+              <a
                 key={shade.id}
-                className="group cursor-pointer editorial-reveal"
+                href={SHOPEE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block editorial-reveal"
                 style={{ transitionDelay: `${(i + 1) * 100}ms` }}
               >
                 <div className="relative aspect-[2/3] bg-surface-container overflow-hidden mb-4">
@@ -328,7 +345,7 @@ export default function Home() {
                 <p className="font-body-sm text-body-sm text-on-surface-variant">
                   {shade.price}
                 </p>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -472,7 +489,9 @@ export default function Home() {
               </h5>
               <a
                 className="font-body-sm text-body-sm text-on-secondary-container hover:text-primary hover:underline underline-offset-4 transition-all"
-                href="#"
+                href={SHOPEE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Collections
               </a>
