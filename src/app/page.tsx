@@ -20,7 +20,7 @@ const CHANNELS = [
   {
     name: "Instagram",
     handle: "theoo_store.th",
-    href: "https://www.instagram.com/theoo_store.th",
+    href: "https://www.instagram.com/theoo_store.th?igsh=OGUwNHZxZXFhcXB3&utm_source=qr",
     icon: SiInstagram,
   },
   {
@@ -151,9 +151,9 @@ export default function Home() {
             <a
               data-nav-link
               className="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors pb-1 border-b border-transparent"
-              href="#shop"
+              href="#buy"
             >
-              Shop
+              Buy
             </a>
           </div>
           <div className="flex items-center gap-6">
@@ -246,7 +246,7 @@ export default function Home() {
           >
             <div className="relative aspect-[4/5] shadow-sm overflow-hidden">
               <Image
-                src="/images/philosophy-1.jpg"
+                src="/images/pure_forest.jpg"
                 alt="theoo skincare texture"
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
@@ -256,7 +256,7 @@ export default function Home() {
             </div>
             <div className="relative aspect-[4/5] shadow-sm overflow-hidden mt-12">
               <Image
-                src="/images/philosophy-2.jpg"
+                src="/images/pure_water.jpg"
                 alt="theoo product detail"
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
@@ -426,16 +426,21 @@ export default function Home() {
                     quality={90}
                     className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                   />
-                  <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 font-label-md text-label-md shadow-sm">
-                    {shade.id}
-                  </div>
                 </div>
-                <h3 className="font-headline-md text-headline-md text-sm mb-1 uppercase tracking-wider">
-                  {shade.name}
-                </h3>
-                <p className="font-body-sm text-body-sm text-on-surface-variant">
-                  {PRICE}
-                </p>
+                <div className="flex flex-col gap-2 p-2">
+                  <div className="flex justify-between">
+                    <div className="font-light text-headline-md text-md mb-1 uppercase tracking-wider">
+                      {shade.id}
+                    </div>
+
+                    <h3 className="font-bold text-headline-md text-sm mb-1 uppercase tracking-wider">
+                      {shade.name}
+                    </h3>
+                  </div>
+                  <p className="font-body-sm text-body-sm text-on-surface-variant text-right">
+                    {PRICE}
+                  </p>
+                </div>
               </a>
             ))}
           </div>
@@ -473,7 +478,7 @@ export default function Home() {
 
       {/* Ritual of Application Section */}
       <section
-        id="shop"
+        id="buy"
         className="scroll-mt-24 py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-container-low overflow-hidden"
       >
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -538,7 +543,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter editorial-reveal">
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
-                src="/images/lifestyle-1.jpg"
+                src="/images/7.jpg"
                 alt="Lifestyle 1"
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
@@ -578,8 +583,8 @@ export default function Home() {
               theoo
             </div>
             <p className="font-body-sm text-body-sm text-on-secondary-container">
-              Effortless beauty, consciously crafted. We believe in simplicity
-              that speaks volumes through quality.
+              Effortless, like you! The Mood Lip Gloss — nourishment and
+              color, together in one swipe.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-16">
@@ -589,73 +594,64 @@ export default function Home() {
               </h5>
               <a
                 className="font-body-sm text-body-sm text-on-secondary-container hover:text-primary hover:underline underline-offset-4 transition-all"
-                href={SHOPEE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#product"
               >
-                Collections
+                Product
               </a>
               <a
                 className="font-body-sm text-body-sm text-on-secondary-container hover:text-primary hover:underline underline-offset-4 transition-all"
-                href="#"
+                href="#ingredients"
               >
                 Ingredients
               </a>
               <a
                 className="font-body-sm text-body-sm text-on-secondary-container hover:text-primary hover:underline underline-offset-4 transition-all"
-                href="#"
+                href="#collection"
               >
-                Stockists
+                Collection
+              </a>
+              <a
+                className="font-body-sm text-body-sm text-on-secondary-container hover:text-primary hover:underline underline-offset-4 transition-all"
+                href="#shades"
+              >
+                Shades
               </a>
             </div>
             <div className="flex flex-col gap-3">
               <h5 className="font-label-md text-label-md text-dark-accent uppercase">
-                Help
+                Connect
               </h5>
-              <a
-                className="font-body-sm text-body-sm text-on-secondary-container hover:text-primary hover:underline underline-offset-4 transition-all"
-                href="#"
-              >
-                Shipping &amp; Returns
-              </a>
-              <a
-                className="font-body-sm text-body-sm text-on-secondary-container hover:text-primary hover:underline underline-offset-4 transition-all"
-                href="#"
-              >
-                Privacy Policy
-              </a>
-              <a
-                className="font-body-sm text-body-sm text-on-secondary-container hover:text-primary hover:underline underline-offset-4 transition-all"
-                href="#"
-              >
-                Contact
-              </a>
+              {CHANNELS.map((channel) => (
+                <a
+                  key={channel.name}
+                  className="font-body-sm text-body-sm text-on-secondary-container hover:text-primary hover:underline underline-offset-4 transition-all"
+                  href={channel.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {channel.name}
+                </a>
+              ))}
             </div>
           </div>
         </div>
         <div className="max-w-[1440px] mx-auto px-margin-desktop mt-stack-lg pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="font-label-md text-label-md text-on-secondary-container">
-            © 2026 theoo skincare. Effortless beauty, consciously crafted.
+            © 2026 theoo. Effortless, like you!
           </p>
           <div className="flex gap-6">
-            <a
-              className="font-label-md text-label-md text-on-secondary-container hover:text-primary transition-colors"
-              href="#"
-            >
-              Instagram
-            </a>
-            <a
-              className="font-label-md text-label-md text-on-secondary-container hover:text-primary transition-colors"
-              href="#"
-            >
-              TikTok
-            </a>
-            <a
-              className="font-label-md text-label-md text-on-secondary-container hover:text-primary transition-colors"
-              href="#"
-            >
-              Pinterest
-            </a>
+            {CHANNELS.map((channel) => (
+              <a
+                key={channel.name}
+                className="text-on-secondary-container hover:text-primary transition-colors"
+                href={channel.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={channel.name}
+              >
+                <channel.icon className="w-5 h-5" />
+              </a>
+            ))}
           </div>
         </div>
       </footer>
