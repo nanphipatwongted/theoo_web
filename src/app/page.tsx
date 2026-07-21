@@ -10,10 +10,32 @@ import {
   Sparkles,
   Sun,
 } from "lucide-react";
+import { SiInstagram, SiShopee, SiTiktok } from "react-icons/si";
 import { PageSearch } from "@/components/page-search";
 import { ScrollEffects } from "@/components/scroll-effects";
 
 const SHOPEE_URL = "https://s.shopee.co.th/4qEDJVMei2";
+
+const CHANNELS = [
+  {
+    name: "Instagram",
+    handle: "theoo_store.th",
+    href: "https://www.instagram.com/theoo_store.th",
+    icon: SiInstagram,
+  },
+  {
+    name: "Shopee",
+    handle: "theoo_store.th",
+    href: SHOPEE_URL,
+    icon: SiShopee,
+  },
+  {
+    name: "TikTok",
+    handle: "theoo_store.th",
+    href: "https://www.tiktok.com/@theoo_store.th",
+    icon: SiTiktok,
+  },
+];
 
 const PRICE = "฿299";
 const NET_WEIGHT = "4.5g";
@@ -315,7 +337,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 editorial-reveal">
             <div className="relative aspect-square bg-surface-container overflow-hidden sm:col-span-2 lg:col-span-1">
               <Image
-                src="/images/ingredients.jpg"
+                src="/images/5.jpg"
                 alt="Lip gloss swatches"
                 fill
                 sizes="(max-width: 1024px) 100vw, 33vw"
@@ -457,62 +479,39 @@ export default function Home() {
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="editorial-reveal">
             <h2 className="font-headline-lg text-headline-lg mb-4 text-dark-accent">
-              Ritual of Application
+              Where to Buy
             </h2>
             <p className="font-label-md text-label-md text-primary uppercase tracking-widest mb-8">
-              Expert Pro Tips
+              Official Channels
             </p>
-            <div className="space-y-10">
-              <div className="flex gap-6">
-                <span className="font-headline-lg text-surface-container-high text-6xl leading-none font-bold">
-                  01
-                </span>
-                <div>
-                  <h4 className="font-headline-md text-headline-md mb-2">
-                    The Base
-                  </h4>
-                  <p className="font-body-md text-on-surface-variant">
-                    Apply to clean, dry lips. For a softer look, blot your
-                    natural lip color with a tiny amount of concealer before
-                    application.
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-6">
-                <span className="font-headline-lg text-surface-container-high text-6xl leading-none font-bold">
-                  02
-                </span>
-                <div>
-                  <h4 className="font-headline-md text-headline-md mb-2">
-                    The Technique
-                  </h4>
-                  <p className="font-body-md text-on-surface-variant">
-                    Start from the cupid&apos;s bow and sweep outwards. The
-                    custom doe-foot applicator is designed to hug your lip
-                    contours for precision in one swipe.
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-6">
-                <span className="font-headline-lg text-surface-container-high text-6xl leading-none font-bold">
-                  03
-                </span>
-                <div>
-                  <h4 className="font-headline-md text-headline-md mb-2">
-                    The Layering
-                  </h4>
-                  <p className="font-body-md text-on-surface-variant">
-                    Wear alone for a healthy, high-shine glow, or layer over a
-                    matte lip liner for a defined, editorial finish.
-                  </p>
-                </div>
-              </div>
+            <div className="space-y-6">
+              {CHANNELS.map((channel) => (
+                <a
+                  key={channel.name}
+                  href={channel.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-6"
+                >
+                  <div className="w-16 h-16 shrink-0 rounded-full bg-surface-container flex items-center justify-center text-primary transition-transform duration-500 group-hover:scale-110">
+                    <channel.icon className="w-7 h-7" />
+                  </div>
+                  <div>
+                    <h4 className="font-headline-md text-headline-md mb-1 group-hover:text-primary transition-colors">
+                      {channel.name}
+                    </h4>
+                    <p className="font-body-md text-on-surface-variant">
+                      {channel.handle}
+                    </p>
+                  </div>
+                </a>
+              ))}
             </div>
           </div>
           <div className="editorial-reveal lg:pl-12">
             <div className="relative">
               <Image
-                src="/images/ritual.jpg"
+                src="/images/9.png"
                 alt="Botanical ingredients"
                 width={800}
                 height={1000}
