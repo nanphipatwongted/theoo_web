@@ -1,8 +1,8 @@
 import Image from "next/image";
 import {
   ChevronDown,
-  Clock,
   Droplet,
+  Heart,
   Search,
   ShoppingBag,
   Sparkles,
@@ -11,12 +11,15 @@ import { ScrollEffects } from "@/components/scroll-effects";
 
 const SHOPEE_URL = "https://s.shopee.co.th/4qEDJVMei2";
 
+const PRICE = "฿299";
+const NET_WEIGHT = "4.5g";
+
 const SHADES = [
-  { id: "101", name: "Pomelo", price: "$28.00" },
-  { id: "102", name: "Rose Quartz", price: "$28.00" },
-  { id: "103", name: "Amber Glow", price: "$28.00" },
-  { id: "104", name: "Spiced Chai", price: "$28.00" },
-  { id: "105", name: "Deep Garnet", price: "$28.00" },
+  { id: "101", name: "Pomelo" },
+  { id: "102", name: "Rose Quartz" },
+  { id: "103", name: "Amber Glow" },
+  { id: "104", name: "Spiced Chai" },
+  { id: "105", name: "Deep Garnet" },
 ];
 
 export default function Home() {
@@ -105,14 +108,14 @@ export default function Home() {
             The Mood Lip Gloss
           </h1>
           <p className="font-body-lg text-body-lg text-white mb-8 max-w-lg mx-auto tracking-wide font-medium">
-            Sensory minimalism for your daily ritual.
+            Nourishment and color, together in one swipe.
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             <a
               href={SHOPEE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-10 py-4 bg-black text-white font-label-md text-label-md tracking-widest uppercase hover:bg-dark-accent transition-all duration-500 shadow-xl"
+              className="px-10 py-4 bg-primary text-white font-label-md text-label-md tracking-widest uppercase hover:bg-dark-accent transition-all duration-500 shadow-xl"
             >
               Explore Shades
             </a>
@@ -189,44 +192,44 @@ export default function Home() {
               The Difference is Felt
             </h2>
             <p className="font-label-md text-label-md text-primary tracking-widest uppercase">
-              Performance meets purity
+              Care and color, in one swipe
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center editorial-reveal">
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-6 text-primary">
-                <Sparkles className="w-7 h-7" />
-              </div>
-              <h3 className="font-headline-md text-headline-md mb-3">
-                High Shine, Zero Stickiness
-              </h3>
-              <p className="font-body-sm text-body-sm text-on-surface-variant max-w-[280px]">
-                Our gel-to-oil hybrid offers a glass-like finish with a
-                lightweight, comfortable feel.
-              </p>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-6 text-primary">
                 <Droplet className="w-7 h-7" />
               </div>
               <h3 className="font-headline-md text-headline-md mb-3">
-                Hyaluronic Acid Infused
+                Creamy &amp; Comfortable
               </h3>
               <p className="font-body-sm text-body-sm text-on-surface-variant max-w-[280px]">
-                Micro-encapsulated HA spheres penetrate to plump and smooth from
-                within.
+                A rich, moisturizing gloss that glides on smoothly and feels
+                comfortable on the lips — no stickiness.
               </p>
             </div>
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-6 text-primary">
-                <Clock className="w-7 h-7" />
+                <Sparkles className="w-7 h-7" />
               </div>
               <h3 className="font-headline-md text-headline-md mb-3">
-                12-hour Hydration
+                Buildable Color Payoff
               </h3>
               <p className="font-body-sm text-body-sm text-on-surface-variant max-w-[280px]">
-                Proven to lock in moisture for half a day, keeping lips soft and
-                supple.
+                Delivers noticeable color that complements your natural lip
+                tone — no lipstick needed underneath.
+              </p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-6 text-primary">
+                <Heart className="w-7 h-7" />
+              </div>
+              <h3 className="font-headline-md text-headline-md mb-3">
+                Plump, Healthy Glow
+              </h3>
+              <p className="font-body-sm text-body-sm text-on-surface-variant max-w-[280px]">
+                Nourishes and hydrates for fuller-looking, healthy lips with
+                a glossy, radiant finish.
               </p>
             </div>
           </div>
@@ -300,6 +303,9 @@ export default function Home() {
               <h2 className="font-headline-lg text-headline-lg text-dark-accent">
                 The 100 Series
               </h2>
+              <p className="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                5 shades · {NET_WEIGHT} · {PRICE}
+              </p>
             </div>
             <a
               className="font-label-md text-label-md text-primary-container hover:text-primary transition-colors underline underline-offset-8"
@@ -337,7 +343,7 @@ export default function Home() {
                   {shade.name}
                 </h3>
                 <p className="font-body-sm text-body-sm text-on-surface-variant">
-                  {shade.price}
+                  {PRICE}
                 </p>
               </a>
             ))}
