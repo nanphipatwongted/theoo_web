@@ -12,36 +12,11 @@ import { ScrollEffects } from "@/components/scroll-effects";
 const SHOPEE_URL = "https://s.shopee.co.th/4qEDJVMei2";
 
 const SHADES = [
-  {
-    id: "101",
-    name: "Pomelo",
-    price: "$28.00",
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuDtxK4wRBjOYT8yK59wXHMNocbWESQBVtfr2SMfyV2U77bLml6KCeA9DReS9BO0FZWqqvM5DiyXuRkdnwEZt-e1pjqJET4tqJZG9IJjZ9iA9XbVgONi62EwYB3SIAakEi7jUyUy9m4bKmnb6bDC96kjgmTwVmtxr1CZ3eAvA2Mv0_SFZF89nWumQ5A_cSJ3xJdmZZ9Jh2uewKWrvGTqrPhac4Lqu0kAlp978krWGT-cjY51ZApXwUa_hzJ6jhEdi0JjlQ=s0",
-  },
-  {
-    id: "102",
-    name: "Rose Quartz",
-    price: "$28.00",
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCdaPQKRM8-muz4txlp9z7fKv3X9SJw9aT0QQnG7PGoIu2Dm4ZfpWHmL_dN-oylipszj0URazuOXrnQPBVJa5THsSKTq6UzH_U9SSdUkgFsdTW0UcP5vl3hjNDjJztS0ypwayDqkvIzw3JK8kvqRwHA1Fk0kFTFNmYmlvxUVkF18fdweTcTZk2XMTqiT9hK7ONKGP6Dm_iqxRVOla7jvo3B5UIOWr4laZFNJcu2tyzYh3CxDfrKkBJt90FJT-OhP-gbeQ=s0",
-  },
-  {
-    id: "103",
-    name: "Amber Glow",
-    price: "$28.00",
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuDAcSilkNWibcAKcJHkOj7hNwORYwQeXDoJPulSKkb4VMu-UQXlklPI9kUURYMuz6VrfKVErOCV9gEjIOLrSOmG_fglEI3N569FQH35sTBwHe57Nj5inSSspPpHK5yx238tkLNMXSoOBXvpzWyhigpDeL5ZXtTu0TuPHamORE9VghJeZguRwTgin3jJAiChcDcIjSL92ODxHadWSmQ8cqo4Vfrm7rluvVkf1rM08AgiF0rXsauQMd5DDibwcJoYontH2w=s0",
-  },
-  {
-    id: "104",
-    name: "Spiced Chai",
-    price: "$28.00",
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCmF9Nq8riidNGdX8qIdbVcY084M_iko3tYTP8-FPp5VEPAEdKHkx8gcisJ4hxy5sFxr4JY4E375Of5VvMPQ4b3DiiEF8HE14tHFseJoWnzC08i60eEwyD7CKeGPJoK0kVMvpJkAxxpGEx2G1UdHJg01fTBWFfPr1FE-mBHF0klTqBF6Ef8pgpmO-tmi55sDMMdVt1yEooJM4FP3BV7R_SrLsP_3EbM3Dv6TNBGi2ErzVlLh2ex7F6D1iH9EC3X1wiShg=s0",
-  },
-  {
-    id: "105",
-    name: "Deep Garnet",
-    price: "$28.00",
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCcwv7BM-Fn7zD_NK29u67ZkkfYNgC2VorotMWzK3BHllDpriDpimwDcUWYrezLVRWEDqvhI5Lo6ZO-IdRWPNw6_mXzn_YI7lIrHDwYb4NtE1F3FT0BlWNPHDKmX7TNcrsmb1mwZh2HTMfftr79el-kJc7A-7oF5Z1QDrhxUGGPjOmBWX39s89V55bYuVg-kPco_Y7gRffr2v2rdrIEic9z-YpbFuMqsluMWkuwS3A7JczjclGZwauAkbdqkUTbUqtbhQ=s0",
-  },
+  { id: "101", name: "Pomelo", price: "$28.00" },
+  { id: "102", name: "Rose Quartz", price: "$28.00" },
+  { id: "103", name: "Amber Glow", price: "$28.00" },
+  { id: "104", name: "Spiced Chai", price: "$28.00" },
+  { id: "105", name: "Deep Garnet", price: "$28.00" },
 ];
 
 export default function Home() {
@@ -347,7 +322,7 @@ export default function Home() {
               >
                 <div className="relative aspect-[2/3] bg-surface-container overflow-hidden mb-4">
                   <Image
-                    src={shade.src}
+                    src={`/images/${shade.id}.png`}
                     alt={`Shade ${shade.id} - ${shade.name}`}
                     fill
                     sizes="(max-width: 768px) 50vw, 20vw"
