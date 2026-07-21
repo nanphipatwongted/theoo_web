@@ -28,7 +28,7 @@ function ShadeSwatch({ shade }: { shade: (typeof SHADES)[number] }) {
       href={SHOPEE_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex flex-col items-center px-6"
+      className="group block"
     >
       <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 overflow-hidden shadow-xl transition-transform duration-500 group-hover:scale-110 group-hover:z-10">
         <Image
@@ -40,12 +40,6 @@ function ShadeSwatch({ shade }: { shade: (typeof SHADES)[number] }) {
           className="object-cover"
         />
       </div>
-      <p className="mt-4 font-headline-md text-headline-md text-sm uppercase tracking-wider">
-        {shade.name}
-      </p>
-      <p className="font-body-sm text-body-sm text-on-surface-variant">
-        {shade.id}
-      </p>
     </a>
   );
 }
@@ -401,13 +395,13 @@ export default function Home() {
               Shades
             </h2>
           </div>
-          <div className="flex flex-col items-center editorial-reveal">
-            <div className="flex flex-wrap justify-center">
+          <div className="flex flex-col items-center gap-y-8 editorial-reveal">
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-8">
               {SHADES.slice(0, 3).map((shade) => (
                 <ShadeSwatch key={shade.id} shade={shade} />
               ))}
             </div>
-            <div className="flex flex-wrap justify-center -mt-8 md:-mt-12">
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-8">
               {SHADES.slice(3, 5).map((shade) => (
                 <ShadeSwatch key={shade.id} shade={shade} />
               ))}
