@@ -63,6 +63,9 @@ function ShadeSwatch({ shade }: { shade: (typeof SHADES)[number] }) {
           className="object-cover"
         />
       </div>
+      <p className="mt-3 text-center font-label-md text-label-md text-on-surface-variant">
+        {shade.id}
+      </p>
     </a>
   );
 }
@@ -156,10 +159,10 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/5" />
         </div>
         <div className="relative z-10 text-center px-margin-mobile md:px-margin-desktop max-w-4xl">
-          <h1 className="font-headline-xl text-headline-xl mb-4 uppercase tracking-widest drop-shadow-sm text-white">
+          <h1 className="font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-4 uppercase tracking-widest drop-shadow-sm text-white">
             The Mood Lip Gloss
           </h1>
-          <p className="font-body-lg text-body-lg text-white mb-8 max-w-lg mx-auto tracking-wide font-medium">
+          <p className="font-body-lg text-body-sm md:text-body-lg text-white mb-8 max-w-lg mx-auto tracking-wide font-medium">
             Nourishment and color, together in one swipe.
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
@@ -305,8 +308,8 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 editorial-reveal">
             <div className="relative aspect-square bg-surface-container overflow-hidden sm:col-span-2 lg:col-span-1">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZKNHyyB6wnA5Qr8CEv6IMetuwQI9mGberJ_lSqCftSUYgkiKOXIhC7pzq0-XkVJiLE4asOt3bkRODd6wZGYfQzmRwyLIB3XJQT5NXJ-LNvZ14i2lXHyurh_n89E5Z5vE4XaVdUy5DytLzRia4fA_1kc_AbCO2EB230ZjLoDp2MUADuN4eZFIwbosVvS9UJ5NCrvnUMH_XElWgfGwAHSJCqXRq-XWtxN8YuGvTIywtqd-kf41rwzqYWGgbCs687VXAiQ=s0"
-                alt="Botanical ingredients"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2MXtiZh7AP5LEgUh8wh8cn21YUoR4Fd5PjeBluaOVZ80F-SUhQTDr9bn05tY4iPsOToGAkTFO2T219WXKWEpTtTsrLSRva109tRNYpzZoCCns7wNTCMZxe2Dcjh3ktkvSZAaCZgRfYPd4wbx05lwnDu9BqL0injKdpX53oZzs_VW32vunrlYUBc8Heh6K9or9FQb0TixT3P2npmltZhTgv_KsXMphQw0Q_5-m9V-zupfxrCg5_srCmX5pXDtRP8X6mA=s0"
+                alt="Lip gloss swatches"
                 fill
                 sizes="(max-width: 1024px) 100vw, 33vw"
                 quality={90}
@@ -502,8 +505,8 @@ export default function Home() {
           <div className="editorial-reveal lg:pl-12">
             <div className="relative">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2MXtiZh7AP5LEgUh8wh8cn21YUoR4Fd5PjeBluaOVZ80F-SUhQTDr9bn05tY4iPsOToGAkTFO2T219WXKWEpTtTsrLSRva109tRNYpzZoCCns7wNTCMZxe2Dcjh3ktkvSZAaCZgRfYPd4wbx05lwnDu9BqL0injKdpX53oZzs_VW32vunrlYUBc8Heh6K9or9FQb0TixT3P2npmltZhTgv_KsXMphQw0Q_5-m9V-zupfxrCg5_srCmX5pXDtRP8X6mA=s0"
-                alt="Lip gloss swatches"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZKNHyyB6wnA5Qr8CEv6IMetuwQI9mGberJ_lSqCftSUYgkiKOXIhC7pzq0-XkVJiLE4asOt3bkRODd6wZGYfQzmRwyLIB3XJQT5NXJ-LNvZ14i2lXHyurh_n89E5Z5vE4XaVdUy5DytLzRia4fA_1kc_AbCO2EB230ZjLoDp2MUADuN4eZFIwbosVvS9UJ5NCrvnUMH_XElWgfGwAHSJCqXRq-XWtxN8YuGvTIywtqd-kf41rwzqYWGgbCs687VXAiQ=s0"
+                alt="Botanical ingredients"
                 width={800}
                 height={1000}
                 sizes="(max-width: 1024px) 100vw, 50vw"
