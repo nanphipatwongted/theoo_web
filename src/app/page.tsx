@@ -170,7 +170,7 @@ export default function Home() {
               href={SHOPEE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-10 py-4 bg-primary text-white font-label-md text-label-md tracking-widest uppercase hover:bg-dark-accent transition-all duration-500 shadow-xl"
+              className="w-1/2 md:w-auto mx-auto md:mx-0 px-10 py-4 bg-primary text-white font-label-md text-label-md tracking-widest uppercase hover:bg-dark-accent transition-all duration-500 shadow-xl text-center"
             >
               Explore Shades
             </a>
