@@ -16,10 +16,10 @@ const NET_WEIGHT = "4.5g";
 
 const SHADES = [
   { id: "101", name: "Pomelo" },
-  { id: "102", name: "Rose Quartz" },
-  { id: "103", name: "Amber Glow" },
-  { id: "104", name: "Spiced Chai" },
-  { id: "105", name: "Deep Garnet" },
+  { id: "102", name: "Teddy" },
+  { id: "103", name: "Misty" },
+  { id: "104", name: "Brick" },
+  { id: "105", name: "Rosewood" },
 ];
 
 export default function Home() {
@@ -216,8 +216,8 @@ export default function Home() {
                 Buildable Color Payoff
               </h3>
               <p className="font-body-sm text-body-sm text-on-surface-variant max-w-[280px]">
-                Delivers noticeable color that complements your natural lip
-                tone — no lipstick needed underneath.
+                Delivers noticeable color that complements your natural lip tone
+                — no lipstick needed underneath.
               </p>
             </div>
             <div className="flex flex-col items-center">
@@ -228,8 +228,8 @@ export default function Home() {
                 Plump, Healthy Glow
               </h3>
               <p className="font-body-sm text-body-sm text-on-surface-variant max-w-[280px]">
-                Nourishes and hydrates for fuller-looking, healthy lips with
-                a glossy, radiant finish.
+                Nourishes and hydrates for fuller-looking, healthy lips with a
+                glossy, radiant finish.
               </p>
             </div>
           </div>
@@ -326,7 +326,7 @@ export default function Home() {
                 className="group block editorial-reveal"
                 style={{ transitionDelay: `${(i + 1) * 100}ms` }}
               >
-                <div className="relative aspect-[2/3] bg-surface-container overflow-hidden mb-4">
+                <div className="relative aspect-[2/3] bg-surface-container overflow-hidden mb-4 transition-transform duration-500 group-hover:scale-105">
                   <Image
                     src={`/images/${shade.id}.png`}
                     alt={`Shade ${shade.id} - ${shade.name}`}
