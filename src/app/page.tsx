@@ -373,23 +373,23 @@ export default function Home() {
               Shades
             </h2>
           </div>
-          <div className="flex flex-wrap justify-center items-end editorial-reveal">
+          <div className="flex flex-wrap justify-center items-end gap-y-14 editorial-reveal">
             {SHADES.map((shade, i) => (
               <a
                 key={shade.id}
                 href={SHOPEE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group flex flex-col items-center px-4 pt-6 transition-transform duration-500 ${
-                  i % 2 === 1 ? "-translate-y-6" : ""
+                className={`group flex flex-col items-center px-6 pt-6 transition-transform duration-500 ${
+                  i % 2 === 1 ? "-translate-y-10" : ""
                 }`}
               >
-                <div className="relative w-24 h-24 md:w-32 md:h-32 -ml-6 first:ml-0 rounded-full overflow-hidden border-4 border-surface shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:z-10">
+                <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 -ml-10 first:ml-0 rounded-full overflow-hidden border-4 border-surface shadow-xl transition-transform duration-500 group-hover:scale-110 group-hover:z-10">
                   <Image
                     src={`/images/swatch${shade.id}.PNG`}
                     alt={`${shade.name} swatch`}
                     fill
-                    sizes="150px"
+                    sizes="(max-width: 768px) 192px, 256px"
                     quality={90}
                     className="object-cover"
                   />
