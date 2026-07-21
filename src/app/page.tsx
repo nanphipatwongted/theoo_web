@@ -155,7 +155,7 @@ export default function Home() {
       >
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDw9yVpKU8lzkTq3DBgTOjqvSY8noPzkYf2bdPx6MbyzJJSGpmdfbysdxyPNwQZ7NVCGPCLEzgkbVf8AEEOU_SYuJfSPM9dqIDxZl2b66My1MTkF1Lk9s249Ts3f8U2hmur3nAmijE3FapPxhRpvqjKvsLRYo1OgdI6o7Y6vl025GTQ319M8QrB6ASCfz82qfiZ35kUb5nV4WEPOgu4nbqECT2vyma2DjjUmROuCabcnX9THpvsYASAW7yR37iBY__GoA=s0"
+            src="/images/hero.jpg"
             alt="theoo Mood Lip Gloss"
             fill
             priority
@@ -224,7 +224,7 @@ export default function Home() {
           >
             <div className="relative aspect-[4/5] shadow-sm overflow-hidden">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzDIq2wUIEk6rOQt-mcnt9M13icpTu2wn4DnXsO3uJQkQONLOk951S6wecI2sK10Y8JWG9Lxd22NzLGABEIEU4s-0u5J_cerNZf7N8r8Y6umsxQfh_7IWhHbgeNzZGBm3wLvsz1cfAQ8XkvkhKgpRC0J0__DZyoVYt55JwjWYDFNDHiLsY4iT5eJj3PgVgR1RQg8xepZEyFduEk9YEz2AIdsED31YjpCjEKSGSm22vWkQqTcItckVyM19b8F9rhuc8PA=s0"
+                src="/images/philosophy-1.jpg"
                 alt="theoo skincare texture"
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
@@ -234,7 +234,7 @@ export default function Home() {
             </div>
             <div className="relative aspect-[4/5] shadow-sm overflow-hidden mt-12">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_vCc8DRbmrnhhXroxiPOdPd4s55WyEj4yXl3L2dFZt8bwwKN5cosE9QOuxpfyX-T_JD2cQO-feyQbkFix3EtegbmwFtXme0T64UADpCwFXMKyCoptBXGxb8i71qYzzZ1JEKi9j0rJEpVrDWdSZz-pwa2LSfs9hGWyvcADjYT7Dzw8f9KAp07MCgrT_3XUovJJbieKe2WC1aVzHwV5uvJ18v6b1qQEElIfU-55c4RbI-dWztDPVd2x-qC8denb-PlUng=s0"
+                src="/images/philosophy-2.jpg"
                 alt="theoo product detail"
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
@@ -315,7 +315,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 editorial-reveal">
             <div className="relative aspect-square bg-surface-container overflow-hidden sm:col-span-2 lg:col-span-1">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2MXtiZh7AP5LEgUh8wh8cn21YUoR4Fd5PjeBluaOVZ80F-SUhQTDr9bn05tY4iPsOToGAkTFO2T219WXKWEpTtTsrLSRva109tRNYpzZoCCns7wNTCMZxe2Dcjh3ktkvSZAaCZgRfYPd4wbx05lwnDu9BqL0injKdpX53oZzs_VW32vunrlYUBc8Heh6K9or9FQb0TixT3P2npmltZhTgv_KsXMphQw0Q_5-m9V-zupfxrCg5_srCmX5pXDtRP8X6mA=s0"
+                src="/images/ingredients.jpg"
                 alt="Lip gloss swatches"
                 fill
                 sizes="(max-width: 1024px) 100vw, 33vw"
@@ -512,7 +512,7 @@ export default function Home() {
           <div className="editorial-reveal lg:pl-12">
             <div className="relative">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZKNHyyB6wnA5Qr8CEv6IMetuwQI9mGberJ_lSqCftSUYgkiKOXIhC7pzq0-XkVJiLE4asOt3bkRODd6wZGYfQzmRwyLIB3XJQT5NXJ-LNvZ14i2lXHyurh_n89E5Z5vE4XaVdUy5DytLzRia4fA_1kc_AbCO2EB230ZjLoDp2MUADuN4eZFIwbosVvS9UJ5NCrvnUMH_XElWgfGwAHSJCqXRq-XWtxN8YuGvTIywtqd-kf41rwzqYWGgbCs687VXAiQ=s0"
+                src="/images/ritual.jpg"
                 alt="Botanical ingredients"
                 width={800}
                 height={1000}
@@ -540,7 +540,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter editorial-reveal">
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLZDPDS0IWSZ3lFsmjdxMWVcLDXOflXbDnQt5FeoQfu6eaA_dYLp4GpQ67EazNd1HbLec4DgcBKd24OLvF0yuyliKl8clfUZkBc1cZxiAjpRDac6ElQM21fg8D5FBxT8jmdvbWQUNieJDb-lP2f5N40w0mEKnYHsyL5rc122uzgNO9tSbyDCG9pA6fL1ClErTJaOoCByiIfdFZGofIojQmqrpcIzwFZ7e_jEJ0uxqdyHIb6xBjPW97nvrgkFmgBupRhg=s0"
+                src="/images/lifestyle-1.jpg"
                 alt="Lifestyle 1"
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
@@ -550,7 +550,7 @@ export default function Home() {
             </div>
             <div className="relative aspect-[4/5] overflow-hidden mt-8 md:mt-16">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuATR20nNljYF1Vgl7yUJoDDHBhWUqnvO78GclrBLqCcJn0cnitQPWMKkYNC4J9IMjbZ58O5U7sABvvFAHuDCJrMCkW5kj48wOv-shXGYXGEgFdLSNNBbSP8DZEr_knWoYVJs7fvm7amas3cbvWamFNWbwELpq9TJ5KVNxDM_tgEW-MgdDtJ0IA9-mi8ralzjH0sMKTsLiYUh-2AWdgT9_1gs2p8t1Dr2TbQq8FA73q-fi_COc5cBQWzcb99U5rf-PCSng=s0"
+                src="/images/lifestyle-2.jpg"
                 alt="Lifestyle 2"
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
@@ -560,7 +560,7 @@ export default function Home() {
             </div>
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2MXtiZh7AP5LEgUh8wh8cn21YUoR4Fd5PjeBluaOVZ80F-SUhQTDr9bn05tY4iPsOToGAkTFO2T219WXKWEpTtTsrLSRva109tRNYpzZoCCns7wNTCMZxe2Dcjh3ktkvSZAaCZgRfYPd4wbx05lwnDu9BqL0injKdpX53oZzs_VW32vunrlYUBc8Heh6K9or9FQb0TixT3P2npmltZhTgv_KsXMphQw0Q_5-m9V-zupfxrCg5_srCmX5pXDtRP8X6mA=s0"
+                src="/images/ingredients.jpg"
                 alt="Lifestyle 3"
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
