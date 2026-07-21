@@ -2,9 +2,13 @@ import Image from "next/image";
 import {
   ChevronDown,
   Droplet,
+  Droplets,
   Heart,
+  Leaf,
+  Shield,
   ShoppingBag,
   Sparkles,
+  Sun,
 } from "lucide-react";
 import { PageSearch } from "@/components/page-search";
 import { ScrollEffects } from "@/components/scroll-effects";
@@ -26,22 +30,27 @@ const HERO_INGREDIENTS = [
   {
     name: "Squalane",
     points: ["Deeply moisturizes", "Softens lips for a fuller look"],
+    icon: Droplet,
   },
   {
     name: "Sodium Hyaluronate (Hyaluronic Acid)",
     points: ["Locks in moisture", "Helps smooth lip texture"],
+    icon: Droplets,
   },
   {
     name: "Simmondsia Chinensis (Jojoba) Seed Oil",
     points: ["Nourishes lips", "Helps reduce dryness"],
+    icon: Leaf,
   },
   {
     name: "Vitis Vinifera (Grape) Seed Oil",
     points: ["Rich in antioxidants", "Helps lips look healthy"],
+    icon: Shield,
   },
   {
     name: "Tocopheryl Acetate (Vitamin E)",
     points: ["Nourishes and protects lips from dryness", "An antioxidant"],
+    icon: Sun,
   },
 ];
 
@@ -314,14 +323,14 @@ export default function Home() {
                 className="object-cover"
               />
             </div>
-            {HERO_INGREDIENTS.map((ingredient, i) => (
+            {HERO_INGREDIENTS.map((ingredient) => (
               <div
                 key={ingredient.name}
                 className="bg-surface-container-lowest p-6 md:p-8 flex flex-col"
               >
-                <span className="font-headline-lg text-headline-lg text-surface-container-high text-4xl font-bold mb-4">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
+                <div className="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary mb-4">
+                  <ingredient.icon className="w-6 h-6" />
+                </div>
                 <h4 className="font-headline-md text-headline-md uppercase mb-3">
                   {ingredient.name}
                 </h4>
