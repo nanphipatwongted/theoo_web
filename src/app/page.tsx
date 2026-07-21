@@ -333,7 +333,15 @@ export default function Home() {
                     fill
                     sizes="(max-width: 768px) 50vw, 20vw"
                     quality={90}
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="object-cover transition-opacity duration-500 group-hover:opacity-0"
+                  />
+                  <Image
+                    src={`/images/swatch${shade.id}.PNG`}
+                    alt={`${shade.name} swatch`}
+                    fill
+                    sizes="(max-width: 768px) 50vw, 20vw"
+                    quality={90}
+                    className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                   />
                   <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 font-label-md text-label-md shadow-sm">
                     {shade.id}
