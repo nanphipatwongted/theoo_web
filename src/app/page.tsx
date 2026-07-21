@@ -50,31 +50,36 @@ export default function Home() {
           </div>
           <div className="hidden md:flex items-center gap-8">
             <a
-              className="font-label-md text-label-md text-primary border-b border-primary pb-1"
+              data-nav-link
+              className="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors pb-1 border-b border-transparent"
               href="#collection"
             >
-              Shop
+              Product
             </a>
             <a
-              className="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors"
+              data-nav-link
+              className="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors pb-1 border-b border-transparent"
               href="#philosophy"
             >
               Philosophy
             </a>
             <a
-              className="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors"
+              data-nav-link
+              className="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors pb-1 border-b border-transparent"
               href="#ingredients"
             >
               Ingredients
             </a>
             <a
-              className="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors"
+              data-nav-link
+              className="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors pb-1 border-b border-transparent"
               href="#collection"
             >
               Catalog
             </a>
             <a
-              className="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors"
+              data-nav-link
+              className="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors pb-1 border-b border-transparent"
               href="#ritual"
             >
               Blog
