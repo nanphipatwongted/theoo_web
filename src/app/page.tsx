@@ -105,14 +105,21 @@ export default function Home() {
               className="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors pb-1 border-b border-transparent"
               href="#collection"
             >
-              Catalog
+              Collection
             </a>
             <a
               data-nav-link
               className="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors pb-1 border-b border-transparent"
-              href="#ritual"
+              href="#shades"
             >
-              Blog
+              Shades
+            </a>
+            <a
+              data-nav-link
+              className="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors pb-1 border-b border-transparent"
+              href="#shop"
+            >
+              Shop
             </a>
           </div>
           <div className="flex items-center gap-6">
@@ -298,7 +305,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 editorial-reveal">
             <div className="relative aspect-square bg-surface-container overflow-hidden sm:col-span-2 lg:col-span-1">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2EFxysX8uKAsztjzKVjLl0-cmWPdA_Mo0ZdTcNucbqWpgbGVY3KC6-FW_pXytfbLukt-s-wZGL5T0JZOqO9lh12tjF-f48J7DRHiA44bQK7qv8fwPXrND5Q95jxt1dDOX-Q0qOSsaUuXrG5LGp3OlBC8WymLfNERG2HvaXgfxuobEZkiqd53ZBzr-63psr93w9T_kV5S77hixziYBmMU6Ksplsrs-HUT8D6qiiBG4qMR458g4Q6OnzIYgsqL0Sl_RAw=s0"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZKNHyyB6wnA5Qr8CEv6IMetuwQI9mGberJ_lSqCftSUYgkiKOXIhC7pzq0-XkVJiLE4asOt3bkRODd6wZGYfQzmRwyLIB3XJQT5NXJ-LNvZ14i2lXHyurh_n89E5Z5vE4XaVdUy5DytLzRia4fA_1kc_AbCO2EB230ZjLoDp2MUADuN4eZFIwbosVvS9UJ5NCrvnUMH_XElWgfGwAHSJCqXRq-XWtxN8YuGvTIywtqd-kf41rwzqYWGgbCs687VXAiQ=s0"
                 alt="Botanical ingredients"
                 fill
                 sizes="(max-width: 1024px) 100vw, 33vw"
@@ -434,7 +441,7 @@ export default function Home() {
 
       {/* Ritual of Application Section */}
       <section
-        id="ritual"
+        id="shop"
         className="scroll-mt-24 py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-container-low overflow-hidden"
       >
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -495,7 +502,7 @@ export default function Home() {
           <div className="editorial-reveal lg:pl-12">
             <div className="relative">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZKNHyyB6wnA5Qr8CEv6IMetuwQI9mGberJ_lSqCftSUYgkiKOXIhC7pzq0-XkVJiLE4asOt3bkRODd6wZGYfQzmRwyLIB3XJQT5NXJ-LNvZ14i2lXHyurh_n89E5Z5vE4XaVdUy5DytLzRia4fA_1kc_AbCO2EB230ZjLoDp2MUADuN4eZFIwbosVvS9UJ5NCrvnUMH_XElWgfGwAHSJCqXRq-XWtxN8YuGvTIywtqd-kf41rwzqYWGgbCs687VXAiQ=s0"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2MXtiZh7AP5LEgUh8wh8cn21YUoR4Fd5PjeBluaOVZ80F-SUhQTDr9bn05tY4iPsOToGAkTFO2T219WXKWEpTtTsrLSRva109tRNYpzZoCCns7wNTCMZxe2Dcjh3ktkvSZAaCZgRfYPd4wbx05lwnDu9BqL0injKdpX53oZzs_VW32vunrlYUBc8Heh6K9or9FQb0TixT3P2npmltZhTgv_KsXMphQw0Q_5-m9V-zupfxrCg5_srCmX5pXDtRP8X6mA=s0"
                 alt="Lip gloss swatches"
                 width={800}
                 height={1000}
