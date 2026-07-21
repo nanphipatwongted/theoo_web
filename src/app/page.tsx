@@ -30,7 +30,7 @@ function ShadeSwatch({ shade }: { shade: (typeof SHADES)[number] }) {
       rel="noopener noreferrer"
       className="group flex flex-col items-center px-6"
     >
-      <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-surface shadow-xl transition-transform duration-500 group-hover:scale-110 group-hover:z-10">
+      <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 overflow-hidden shadow-xl transition-transform duration-500 group-hover:scale-110 group-hover:z-10">
         <Image
           src={`/images/swatch${shade.id}.PNG`}
           alt={`${shade.name} swatch`}
