@@ -3,10 +3,10 @@ import {
   ChevronDown,
   Droplet,
   Heart,
-  Search,
   ShoppingBag,
   Sparkles,
 } from "lucide-react";
+import { PageSearch } from "@/components/page-search";
 import { ScrollEffects } from "@/components/scroll-effects";
 
 const SHOPEE_URL = "https://s.shopee.co.th/4qEDJVMei2";
@@ -126,9 +126,7 @@ export default function Home() {
             </a>
           </div>
           <div className="flex items-center gap-6">
-            <button className="hover:opacity-70 transition-opacity duration-300">
-              <Search className="w-6 h-6" />
-            </button>
+            <PageSearch />
             <a
               href={SHOPEE_URL}
               target="_blank"
