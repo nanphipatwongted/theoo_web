@@ -298,10 +298,10 @@ export default function Home() {
           <div className="flex justify-between items-end mb-12 editorial-reveal">
             <div>
               <span className="font-label-md text-label-md text-primary uppercase tracking-[0.2em] block mb-2">
-                The Collection
+                The First Collection
               </span>
               <h2 className="font-headline-lg text-headline-lg text-dark-accent">
-                The 100 Series
+                The Mood Lip Gloss
               </h2>
               <p className="font-body-sm text-body-sm text-on-surface-variant mt-2">
                 5 shades · {NET_WEIGHT} · {PRICE}
@@ -352,6 +352,53 @@ export default function Home() {
                 </h3>
                 <p className="font-body-sm text-body-sm text-on-surface-variant">
                   {PRICE}
+                </p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Shades Palette */}
+      <section
+        id="shades"
+        className="scroll-mt-24 py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-container-lowest overflow-hidden"
+      >
+        <div className="max-w-[1440px] mx-auto">
+          <div className="text-center mb-16 editorial-reveal">
+            <span className="font-label-md text-label-md text-primary uppercase tracking-[0.2em] block mb-2">
+              Find Your Mood
+            </span>
+            <h2 className="font-headline-lg text-headline-lg text-dark-accent">
+              Shades
+            </h2>
+          </div>
+          <div className="flex flex-wrap justify-center items-end editorial-reveal">
+            {SHADES.map((shade, i) => (
+              <a
+                key={shade.id}
+                href={SHOPEE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group flex flex-col items-center px-4 pt-6 transition-transform duration-500 ${
+                  i % 2 === 1 ? "-translate-y-6" : ""
+                }`}
+              >
+                <div className="relative w-24 h-24 md:w-32 md:h-32 -ml-6 first:ml-0 rounded-full overflow-hidden border-4 border-surface shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:z-10">
+                  <Image
+                    src={`/images/swatch${shade.id}.PNG`}
+                    alt={`${shade.name} swatch`}
+                    fill
+                    sizes="150px"
+                    quality={90}
+                    className="object-cover"
+                  />
+                </div>
+                <p className="mt-4 font-headline-md text-headline-md text-sm uppercase tracking-wider">
+                  {shade.name}
+                </p>
+                <p className="font-body-sm text-body-sm text-on-surface-variant">
+                  {shade.id}
                 </p>
               </a>
             ))}
