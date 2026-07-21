@@ -52,7 +52,7 @@ export default function Home() {
             <a
               data-nav-link
               className="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors pb-1 border-b border-transparent"
-              href="#collection"
+              href="#product"
             >
               Product
             </a>
@@ -102,7 +102,10 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <header className="relative w-full h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
+      <header
+        id="product"
+        className="scroll-mt-24 relative w-full h-screen min-h-[700px] flex items-center justify-center overflow-hidden"
+      >
         <div className="absolute inset-0 z-0">
           <Image
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuDw9yVpKU8lzkTq3DBgTOjqvSY8noPzkYf2bdPx6MbyzJJSGpmdfbysdxyPNwQZ7NVCGPCLEzgkbVf8AEEOU_SYuJfSPM9dqIDxZl2b66My1MTkF1Lk9s249Ts3f8U2hmur3nAmijE3FapPxhRpvqjKvsLRYo1OgdI6o7Y6vl025GTQ319M8QrB6ASCfz82qfiZ35kUb5nV4WEPOgu4nbqECT2vyma2DjjUmROuCabcnX9THpvsYASAW7yR37iBY__GoA"
