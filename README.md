@@ -1,5 +1,30 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Brand / Design System — theoo
+
+**Tagline:** "Effortless, like you!"
+
+### Fonts
+
+| Use  | Font           |
+| ---- | -------------- |
+| Body | Poppins        |
+| Logo / Headings | League Spartan |
+
+### Color Palette
+
+| Swatch | Hex       | Role                        |
+| ------ | --------- | ---------------------------- |
+| ⬜     | `#A6A195` | Primary (warm taupe/greige) |
+| ⬜     | `#C7CBC8` | Secondary (sage grey)       |
+| ⬜     | `#F6F4F0` | Background (off-white/cream) |
+| ⬜     | `#E4E4E4` | Muted / borders (light grey) |
+| ⬛     | `#5F5143` | Dark accent / text (deep brown) |
+
+### Moodboard
+
+Soft, glowing skin; glossy lips; minimal skincare & makeup product photography; warm neutral tones; marble textures. Overall feel: clean, effortless, understated beauty.
+
 ## Getting Started
 
 First, run the development server:
