@@ -294,19 +294,19 @@ export default function Home() {
             <h2 className="font-headline-lg text-headline-lg text-dark-accent mb-8">
               Hero Ingredients
             </h2>
-            <div className="space-y-6">
+            <div className="space-y-8">
               {HERO_INGREDIENTS.map((ingredient) => (
                 <div key={ingredient.name} className="flex gap-4">
-                  <Sparkles className="w-5 h-5 text-primary shrink-0 mt-1" />
+                  <Sparkles className="w-7 h-7 text-primary shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-headline-md text-headline-md text-sm uppercase mb-1">
+                    <h4 className="font-headline-md text-headline-md uppercase mb-2">
                       {ingredient.name}
                     </h4>
-                    <ul className="list-disc list-inside">
+                    <ul className="list-disc list-inside space-y-1">
                       {ingredient.points.map((point) => (
                         <li
                           key={point}
-                          className="font-body-sm text-body-sm text-on-surface-variant"
+                          className="font-body-md text-body-md text-on-surface-variant"
                         >
                           {point}
                         </li>
