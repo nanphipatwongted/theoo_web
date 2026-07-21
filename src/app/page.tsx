@@ -49,31 +49,31 @@ export default function Home() {
           <div className="hidden md:flex items-center gap-8">
             <a
               className="font-label-md text-label-md text-primary border-b border-primary pb-1"
-              href="#"
+              href="#collection"
             >
               Shop
             </a>
             <a
               className="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors"
-              href="#"
+              href="#philosophy"
             >
               Philosophy
             </a>
             <a
               className="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors"
-              href="#"
+              href="#ingredients"
             >
               Ingredients
             </a>
             <a
               className="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors"
-              href="#"
+              href="#collection"
             >
               Catalog
             </a>
             <a
               className="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors"
-              href="#"
+              href="#ritual"
             >
               Blog
             </a>
@@ -121,7 +121,10 @@ export default function Home() {
       </header>
 
       {/* Philosophy & Narrative Section */}
-      <section className="py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+      <section
+        id="philosophy"
+        className="scroll-mt-24 py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-container-low"
+      >
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
           <div className="md:col-span-5 editorial-reveal">
             <h2 className="font-headline-lg text-headline-lg mb-stack-sm text-dark-accent">
@@ -226,7 +229,10 @@ export default function Home() {
       </section>
 
       {/* Ingredient Spotlight */}
-      <section className="py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+      <section
+        id="ingredients"
+        className="scroll-mt-24 py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-container-low"
+      >
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="editorial-reveal">
             <span className="font-label-md text-label-md text-primary uppercase tracking-[0.2em] block mb-4">
@@ -276,7 +282,10 @@ export default function Home() {
       </section>
 
       {/* Product Collection Grid */}
-      <section className="py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface">
+      <section
+        id="collection"
+        className="scroll-mt-24 py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface"
+      >
         <div className="max-w-[1440px] mx-auto">
           <div className="flex justify-between items-end mb-12 editorial-reveal">
             <div>
@@ -326,7 +335,10 @@ export default function Home() {
       </section>
 
       {/* Ritual of Application Section */}
-      <section className="py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-container-low overflow-hidden">
+      <section
+        id="ritual"
+        className="scroll-mt-24 py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-container-low overflow-hidden"
+      >
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="editorial-reveal">
             <h2 className="font-headline-lg text-headline-lg mb-4 text-dark-accent">
