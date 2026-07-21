@@ -509,15 +509,14 @@ export default function Home() {
             </div>
           </div>
           <div className="editorial-reveal lg:pl-12">
-            <div className="relative">
+            <div className="relative aspect-square">
               <Image
                 src="/images/9.png"
-                alt="Botanical ingredients"
-                width={800}
-                height={1000}
+                alt="theoo product"
+                fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 quality={90}
-                className="w-full h-auto shadow-2xl relative z-10"
+                className="object-cover shadow-2xl relative z-10"
               />
               <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-primary-container/20 -z-0" />
             </div>
