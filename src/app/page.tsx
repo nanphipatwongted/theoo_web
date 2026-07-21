@@ -286,48 +286,49 @@ export default function Home() {
         id="ingredients"
         className="scroll-mt-24 py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-container-low"
       >
-        <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-          <div className="editorial-reveal">
-            <span className="font-label-md text-label-md text-primary uppercase tracking-[0.2em] block mb-4">
+        <div className="max-w-[1440px] mx-auto">
+          <div className="text-center mb-16 editorial-reveal">
+            <span className="font-label-md text-label-md text-primary uppercase tracking-[0.2em] block mb-2">
               Ingredient Spotlight
             </span>
-            <h2 className="font-headline-lg text-headline-lg text-dark-accent mb-8">
+            <h2 className="font-headline-lg text-headline-lg text-dark-accent">
               Hero Ingredients
             </h2>
-            <div className="space-y-8">
-              {HERO_INGREDIENTS.map((ingredient) => (
-                <div key={ingredient.name} className="flex gap-4">
-                  <Sparkles className="w-7 h-7 text-primary shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-headline-md text-headline-md uppercase mb-2">
-                      {ingredient.name}
-                    </h4>
-                    <ul className="list-disc list-inside space-y-1">
-                      {ingredient.points.map((point) => (
-                        <li
-                          key={point}
-                          className="font-body-md text-body-md text-on-surface-variant"
-                        >
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
-          <div className="editorial-reveal">
-            <div className="relative aspect-square bg-surface-container overflow-hidden">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 editorial-reveal">
+            <div className="relative aspect-square bg-surface-container overflow-hidden sm:col-span-2 lg:col-span-1">
               <Image
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2EFxysX8uKAsztjzKVjLl0-cmWPdA_Mo0ZdTcNucbqWpgbGVY3KC6-FW_pXytfbLukt-s-wZGL5T0JZOqO9lh12tjF-f48J7DRHiA44bQK7qv8fwPXrND5Q95jxt1dDOX-Q0qOSsaUuXrG5LGp3OlBC8WymLfNERG2HvaXgfxuobEZkiqd53ZBzr-63psr93w9T_kV5S77hixziYBmMU6Ksplsrs-HUT8D6qiiBG4qMR458g4Q6OnzIYgsqL0Sl_RAw=s0"
                 alt="Botanical ingredients"
                 fill
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 1024px) 100vw, 33vw"
                 quality={90}
                 className="object-cover"
               />
             </div>
+            {HERO_INGREDIENTS.map((ingredient, i) => (
+              <div
+                key={ingredient.name}
+                className="bg-surface-container-lowest p-6 md:p-8 flex flex-col"
+              >
+                <span className="font-headline-lg text-headline-lg text-surface-container-high text-4xl font-bold mb-4">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h4 className="font-headline-md text-headline-md uppercase mb-3">
+                  {ingredient.name}
+                </h4>
+                <ul className="list-disc list-inside space-y-1 mt-auto">
+                  {ingredient.points.map((point) => (
+                    <li
+                      key={point}
+                      className="font-body-sm text-body-sm text-on-surface-variant"
+                    >
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </section>
