@@ -1,5 +1,12 @@
 import Image from "next/image";
-import { ChevronDown, Clock, Droplet, Search, ShoppingBag, Sparkles } from "lucide-react";
+import {
+  ChevronDown,
+  Clock,
+  Droplet,
+  Search,
+  ShoppingBag,
+  Sparkles,
+} from "lucide-react";
 import { ScrollEffects } from "@/components/scroll-effects";
 
 const SHOPEE_URL = "https://s.shopee.co.th/4qEDJVMei2";
@@ -9,31 +16,31 @@ const SHADES = [
     id: "101",
     name: "Pomelo",
     price: "$28.00",
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuDtxK4wRBjOYT8yK59wXHMNocbWESQBVtfr2SMfyV2U77bLml6KCeA9DReS9BO0FZWqqvM5DiyXuRkdnwEZt-e1pjqJET4tqJZG9IJjZ9iA9XbVgONi62EwYB3SIAakEi7jUyUy9m4bKmnb6bDC96kjgmTwVmtxr1CZ3eAvA2Mv0_SFZF89nWumQ5A_cSJ3xJdmZZ9Jh2uewKWrvGTqrPhac4Lqu0kAlp978krWGT-cjY51ZApXwUa_hzJ6jhEdi0JjlQ",
+    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuDtxK4wRBjOYT8yK59wXHMNocbWESQBVtfr2SMfyV2U77bLml6KCeA9DReS9BO0FZWqqvM5DiyXuRkdnwEZt-e1pjqJET4tqJZG9IJjZ9iA9XbVgONi62EwYB3SIAakEi7jUyUy9m4bKmnb6bDC96kjgmTwVmtxr1CZ3eAvA2Mv0_SFZF89nWumQ5A_cSJ3xJdmZZ9Jh2uewKWrvGTqrPhac4Lqu0kAlp978krWGT-cjY51ZApXwUa_hzJ6jhEdi0JjlQ=s0",
   },
   {
     id: "102",
     name: "Rose Quartz",
     price: "$28.00",
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCdaPQKRM8-muz4txlp9z7fKv3X9SJw9aT0QQnG7PGoIu2Dm4ZfpWHmL_dN-oylipszj0URazuOXrnQPBVJa5THsSKTq6UzH_U9SSdUkgFsdTW0UcP5vl3hjNDjJztS0ypwayDqkvIzw3JK8kvqRwHA1Fk0kFTFNmYmlvxUVkF18fdweTcTZk2XMTqiT9hK7ONKGP6Dm_iqxRVOla7jvo3B5UIOWr4laZFNJcu2tyzYh3CxDfrKkBJt90FJT-OhP-gbeQ",
+    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCdaPQKRM8-muz4txlp9z7fKv3X9SJw9aT0QQnG7PGoIu2Dm4ZfpWHmL_dN-oylipszj0URazuOXrnQPBVJa5THsSKTq6UzH_U9SSdUkgFsdTW0UcP5vl3hjNDjJztS0ypwayDqkvIzw3JK8kvqRwHA1Fk0kFTFNmYmlvxUVkF18fdweTcTZk2XMTqiT9hK7ONKGP6Dm_iqxRVOla7jvo3B5UIOWr4laZFNJcu2tyzYh3CxDfrKkBJt90FJT-OhP-gbeQ=s0",
   },
   {
     id: "103",
     name: "Amber Glow",
     price: "$28.00",
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuDAcSilkNWibcAKcJHkOj7hNwORYwQeXDoJPulSKkb4VMu-UQXlklPI9kUURYMuz6VrfKVErOCV9gEjIOLrSOmG_fglEI3N569FQH35sTBwHe57Nj5inSSspPpHK5yx238tkLNMXSoOBXvpzWyhigpDeL5ZXtTu0TuPHamORE9VghJeZguRwTgin3jJAiChcDcIjSL92ODxHadWSmQ8cqo4Vfrm7rluvVkf1rM08AgiF0rXsauQMd5DDibwcJoYontH2w",
+    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuDAcSilkNWibcAKcJHkOj7hNwORYwQeXDoJPulSKkb4VMu-UQXlklPI9kUURYMuz6VrfKVErOCV9gEjIOLrSOmG_fglEI3N569FQH35sTBwHe57Nj5inSSspPpHK5yx238tkLNMXSoOBXvpzWyhigpDeL5ZXtTu0TuPHamORE9VghJeZguRwTgin3jJAiChcDcIjSL92ODxHadWSmQ8cqo4Vfrm7rluvVkf1rM08AgiF0rXsauQMd5DDibwcJoYontH2w=s0",
   },
   {
     id: "104",
     name: "Spiced Chai",
     price: "$28.00",
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCmF9Nq8riidNGdX8qIdbVcY084M_iko3tYTP8-FPp5VEPAEdKHkx8gcisJ4hxy5sFxr4JY4E375Of5VvMPQ4b3DiiEF8HE14tHFseJoWnzC08i60eEwyD7CKeGPJoK0kVMvpJkAxxpGEx2G1UdHJg01fTBWFfPr1FE-mBHF0klTqBF6Ef8pgpmO-tmi55sDMMdVt1yEooJM4FP3BV7R_SrLsP_3EbM3Dv6TNBGi2ErzVlLh2ex7F6D1iH9EC3X1wiShg",
+    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCmF9Nq8riidNGdX8qIdbVcY084M_iko3tYTP8-FPp5VEPAEdKHkx8gcisJ4hxy5sFxr4JY4E375Of5VvMPQ4b3DiiEF8HE14tHFseJoWnzC08i60eEwyD7CKeGPJoK0kVMvpJkAxxpGEx2G1UdHJg01fTBWFfPr1FE-mBHF0klTqBF6Ef8pgpmO-tmi55sDMMdVt1yEooJM4FP3BV7R_SrLsP_3EbM3Dv6TNBGi2ErzVlLh2ex7F6D1iH9EC3X1wiShg=s0",
   },
   {
     id: "105",
     name: "Deep Garnet",
     price: "$28.00",
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCcwv7BM-Fn7zD_NK29u67ZkkfYNgC2VorotMWzK3BHllDpriDpimwDcUWYrezLVRWEDqvhI5Lo6ZO-IdRWPNw6_mXzn_YI7lIrHDwYb4NtE1F3FT0BlWNPHDKmX7TNcrsmb1mwZh2HTMfftr79el-kJc7A-7oF5Z1QDrhxUGGPjOmBWX39s89V55bYuVg-kPco_Y7gRffr2v2rdrIEic9z-YpbFuMqsluMWkuwS3A7JczjclGZwauAkbdqkUTbUqtbhQ",
+    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCcwv7BM-Fn7zD_NK29u67ZkkfYNgC2VorotMWzK3BHllDpriDpimwDcUWYrezLVRWEDqvhI5Lo6ZO-IdRWPNw6_mXzn_YI7lIrHDwYb4NtE1F3FT0BlWNPHDKmX7TNcrsmb1mwZh2HTMfftr79el-kJc7A-7oF5Z1QDrhxUGGPjOmBWX39s89V55bYuVg-kPco_Y7gRffr2v2rdrIEic9z-YpbFuMqsluMWkuwS3A7JczjclGZwauAkbdqkUTbUqtbhQ=s0",
   },
 ];
 
@@ -108,20 +115,21 @@ export default function Home() {
       >
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDw9yVpKU8lzkTq3DBgTOjqvSY8noPzkYf2bdPx6MbyzJJSGpmdfbysdxyPNwQZ7NVCGPCLEzgkbVf8AEEOU_SYuJfSPM9dqIDxZl2b66My1MTkF1Lk9s249Ts3f8U2hmur3nAmijE3FapPxhRpvqjKvsLRYo1OgdI6o7Y6vl025GTQ319M8QrB6ASCfz82qfiZ35kUb5nV4WEPOgu4nbqECT2vyma2DjjUmROuCabcnX9THpvsYASAW7yR37iBY__GoA"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDw9yVpKU8lzkTq3DBgTOjqvSY8noPzkYf2bdPx6MbyzJJSGpmdfbysdxyPNwQZ7NVCGPCLEzgkbVf8AEEOU_SYuJfSPM9dqIDxZl2b66My1MTkF1Lk9s249Ts3f8U2hmur3nAmijE3FapPxhRpvqjKvsLRYo1OgdI6o7Y6vl025GTQ319M8QrB6ASCfz82qfiZ35kUb5nV4WEPOgu4nbqECT2vyma2DjjUmROuCabcnX9THpvsYASAW7yR37iBY__GoA=s0"
             alt="theoo Mood Lip Gloss"
             fill
             priority
             sizes="100vw"
+            quality={90}
             className="object-cover hero-zoom"
           />
           <div className="absolute inset-0 bg-black/5" />
         </div>
         <div className="relative z-10 text-center px-margin-mobile md:px-margin-desktop max-w-4xl">
-          <h1 className="font-headline-xl text-headline-xl text-on-surface mb-4 uppercase tracking-widest drop-shadow-sm">
+          <h1 className="font-headline-xl text-headline-xl mb-4 uppercase tracking-widest drop-shadow-sm text-white">
             The Mood Lip Gloss
           </h1>
-          <p className="font-body-lg text-body-lg text-on-surface/90 mb-8 max-w-lg mx-auto tracking-wide font-medium">
+          <p className="font-body-lg text-body-lg text-white mb-8 max-w-lg mx-auto tracking-wide font-medium">
             Sensory minimalism for your daily ritual.
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
@@ -129,7 +137,7 @@ export default function Home() {
               href={SHOPEE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-10 py-4 bg-primary text-white font-label-md text-label-md tracking-widest uppercase hover:bg-dark-accent transition-all duration-500 shadow-xl"
+              className="px-10 py-4 bg-black text-white font-label-md text-label-md tracking-widest uppercase hover:bg-dark-accent transition-all duration-500 shadow-xl"
             >
               Explore Shades
             </a>
@@ -154,16 +162,16 @@ export default function Home() {
             <div className="space-y-4">
               <p className="font-body-md text-body-md leading-relaxed text-on-surface-variant">
                 At theoo, we believe that beauty should be a grounding
-                experience. Our commitment to clean beauty means every
-                formula is stripped of the unnecessary and enriched with
-                only what serves your skin&apos;s health.
+                experience. Our commitment to clean beauty means every formula
+                is stripped of the unnecessary and enriched with only what
+                serves your skin&apos;s health.
               </p>
               <p className="font-body-md text-body-md leading-relaxed text-on-surface-variant">
                 We source the world&apos;s finest cold-pressed botanicals,
                 ensuring each application delivers a potent dose of
-                nature&rsquo;s restorative power. No parabens, no
-                silicones—just pure, intentional care that respects both
-                your biology and our planet.
+                nature&rsquo;s restorative power. No parabens, no silicones—just
+                pure, intentional care that respects both your biology and our
+                planet.
               </p>
             </div>
             <button className="mt-8 font-label-md text-label-md uppercase tracking-widest border-b-2 border-primary-container pb-1 hover:border-primary transition-all">
@@ -176,19 +184,21 @@ export default function Home() {
           >
             <div className="relative aspect-[4/5] shadow-sm overflow-hidden">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzDIq2wUIEk6rOQt-mcnt9M13icpTu2wn4DnXsO3uJQkQONLOk951S6wecI2sK10Y8JWG9Lxd22NzLGABEIEU4s-0u5J_cerNZf7N8r8Y6umsxQfh_7IWhHbgeNzZGBm3wLvsz1cfAQ8XkvkhKgpRC0J0__DZyoVYt55JwjWYDFNDHiLsY4iT5eJj3PgVgR1RQg8xepZEyFduEk9YEz2AIdsED31YjpCjEKSGSm22vWkQqTcItckVyM19b8F9rhuc8PA"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzDIq2wUIEk6rOQt-mcnt9M13icpTu2wn4DnXsO3uJQkQONLOk951S6wecI2sK10Y8JWG9Lxd22NzLGABEIEU4s-0u5J_cerNZf7N8r8Y6umsxQfh_7IWhHbgeNzZGBm3wLvsz1cfAQ8XkvkhKgpRC0J0__DZyoVYt55JwjWYDFNDHiLsY4iT5eJj3PgVgR1RQg8xepZEyFduEk9YEz2AIdsED31YjpCjEKSGSm22vWkQqTcItckVyM19b8F9rhuc8PA=s0"
                 alt="theoo skincare texture"
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
+                quality={90}
                 className="object-cover"
               />
             </div>
             <div className="relative aspect-[4/5] shadow-sm overflow-hidden mt-12">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_vCc8DRbmrnhhXroxiPOdPd4s55WyEj4yXl3L2dFZt8bwwKN5cosE9QOuxpfyX-T_JD2cQO-feyQbkFix3EtegbmwFtXme0T64UADpCwFXMKyCoptBXGxb8i71qYzzZ1JEKi9j0rJEpVrDWdSZz-pwa2LSfs9hGWyvcADjYT7Dzw8f9KAp07MCgrT_3XUovJJbieKe2WC1aVzHwV5uvJ18v6b1qQEElIfU-55c4RbI-dWztDPVd2x-qC8denb-PlUng"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_vCc8DRbmrnhhXroxiPOdPd4s55WyEj4yXl3L2dFZt8bwwKN5cosE9QOuxpfyX-T_JD2cQO-feyQbkFix3EtegbmwFtXme0T64UADpCwFXMKyCoptBXGxb8i71qYzzZ1JEKi9j0rJEpVrDWdSZz-pwa2LSfs9hGWyvcADjYT7Dzw8f9KAp07MCgrT_3XUovJJbieKe2WC1aVzHwV5uvJ18v6b1qQEElIfU-55c4RbI-dWztDPVd2x-qC8denb-PlUng=s0"
                 alt="theoo product detail"
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
+                quality={90}
                 className="object-cover"
               />
             </div>
@@ -228,8 +238,8 @@ export default function Home() {
                 Hyaluronic Acid Infused
               </h3>
               <p className="font-body-sm text-body-sm text-on-surface-variant max-w-[280px]">
-                Micro-encapsulated HA spheres penetrate to plump and smooth
-                from within.
+                Micro-encapsulated HA spheres penetrate to plump and smooth from
+                within.
               </p>
             </div>
             <div className="flex flex-col items-center">
@@ -240,8 +250,8 @@ export default function Home() {
                 12-hour Hydration
               </h3>
               <p className="font-body-sm text-body-sm text-on-surface-variant max-w-[280px]">
-                Proven to lock in moisture for half a day, keeping lips soft
-                and supple.
+                Proven to lock in moisture for half a day, keeping lips soft and
+                supple.
               </p>
             </div>
           </div>
@@ -262,11 +272,10 @@ export default function Home() {
               The Alchemy of Nature
             </h2>
             <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-8">
-              Our formula is a meticulous blend of cold-pressed botanical
-              oils and natural waxes. We use organic Jojoba and Rosehip seed
-              oils to mimic the skin&apos;s natural sebum, ensuring deep
-              penetration and lasting comfort without the weight of
-              synthetic silicones.
+              Our formula is a meticulous blend of cold-pressed botanical oils
+              and natural waxes. We use organic Jojoba and Rosehip seed oils to
+              mimic the skin&apos;s natural sebum, ensuring deep penetration and
+              lasting comfort without the weight of synthetic silicones.
             </p>
             <div className="grid grid-cols-2 gap-8">
               <div>
@@ -290,10 +299,11 @@ export default function Home() {
           <div className="editorial-reveal">
             <div className="relative aspect-square bg-surface-container overflow-hidden">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2EFxysX8uKAsztjzKVjLl0-cmWPdA_Mo0ZdTcNucbqWpgbGVY3KC6-FW_pXytfbLukt-s-wZGL5T0JZOqO9lh12tjF-f48J7DRHiA44bQK7qv8fwPXrND5Q95jxt1dDOX-Q0qOSsaUuXrG5LGp3OlBC8WymLfNERG2HvaXgfxuobEZkiqd53ZBzr-63psr93w9T_kV5S77hixziYBmMU6Ksplsrs-HUT8D6qiiBG4qMR458g4Q6OnzIYgsqL0Sl_RAw"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2EFxysX8uKAsztjzKVjLl0-cmWPdA_Mo0ZdTcNucbqWpgbGVY3KC6-FW_pXytfbLukt-s-wZGL5T0JZOqO9lh12tjF-f48J7DRHiA44bQK7qv8fwPXrND5Q95jxt1dDOX-Q0qOSsaUuXrG5LGp3OlBC8WymLfNERG2HvaXgfxuobEZkiqd53ZBzr-63psr93w9T_kV5S77hixziYBmMU6Ksplsrs-HUT8D6qiiBG4qMR458g4Q6OnzIYgsqL0Sl_RAw=s0"
                 alt="Botanical ingredients"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
+                quality={90}
                 className="object-cover"
               />
             </div>
@@ -341,6 +351,7 @@ export default function Home() {
                     alt={`Shade ${shade.id} - ${shade.name}`}
                     fill
                     sizes="(max-width: 768px) 50vw, 20vw"
+                    quality={90}
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 font-label-md text-label-md shadow-sm">
@@ -412,8 +423,8 @@ export default function Home() {
                     The Layering
                   </h4>
                   <p className="font-body-md text-on-surface-variant">
-                    Wear alone for a healthy, high-shine glow, or layer over
-                    a matte lip liner for a defined, editorial finish.
+                    Wear alone for a healthy, high-shine glow, or layer over a
+                    matte lip liner for a defined, editorial finish.
                   </p>
                 </div>
               </div>
@@ -422,11 +433,12 @@ export default function Home() {
           <div className="editorial-reveal lg:pl-12">
             <div className="relative">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZKNHyyB6wnA5Qr8CEv6IMetuwQI9mGberJ_lSqCftSUYgkiKOXIhC7pzq0-XkVJiLE4asOt3bkRODd6wZGYfQzmRwyLIB3XJQT5NXJ-LNvZ14i2lXHyurh_n89E5Z5vE4XaVdUy5DytLzRia4fA_1kc_AbCO2EB230ZjLoDp2MUADuN4eZFIwbosVvS9UJ5NCrvnUMH_XElWgfGwAHSJCqXRq-XWtxN8YuGvTIywtqd-kf41rwzqYWGgbCs687VXAiQ"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZKNHyyB6wnA5Qr8CEv6IMetuwQI9mGberJ_lSqCftSUYgkiKOXIhC7pzq0-XkVJiLE4asOt3bkRODd6wZGYfQzmRwyLIB3XJQT5NXJ-LNvZ14i2lXHyurh_n89E5Z5vE4XaVdUy5DytLzRia4fA_1kc_AbCO2EB230ZjLoDp2MUADuN4eZFIwbosVvS9UJ5NCrvnUMH_XElWgfGwAHSJCqXRq-XWtxN8YuGvTIywtqd-kf41rwzqYWGgbCs687VXAiQ=s0"
                 alt="Lip gloss swatches"
                 width={800}
                 height={1000}
                 sizes="(max-width: 1024px) 100vw, 50vw"
+                quality={90}
                 className="w-full h-auto shadow-2xl relative z-10"
               />
               <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-primary-container/20 -z-0" />
@@ -449,28 +461,31 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter editorial-reveal">
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLZDPDS0IWSZ3lFsmjdxMWVcLDXOflXbDnQt5FeoQfu6eaA_dYLp4GpQ67EazNd1HbLec4DgcBKd24OLvF0yuyliKl8clfUZkBc1cZxiAjpRDac6ElQM21fg8D5FBxT8jmdvbWQUNieJDb-lP2f5N40w0mEKnYHsyL5rc122uzgNO9tSbyDCG9pA6fL1ClErTJaOoCByiIfdFZGofIojQmqrpcIzwFZ7e_jEJ0uxqdyHIb6xBjPW97nvrgkFmgBupRhg"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLZDPDS0IWSZ3lFsmjdxMWVcLDXOflXbDnQt5FeoQfu6eaA_dYLp4GpQ67EazNd1HbLec4DgcBKd24OLvF0yuyliKl8clfUZkBc1cZxiAjpRDac6ElQM21fg8D5FBxT8jmdvbWQUNieJDb-lP2f5N40w0mEKnYHsyL5rc122uzgNO9tSbyDCG9pA6fL1ClErTJaOoCByiIfdFZGofIojQmqrpcIzwFZ7e_jEJ0uxqdyHIb6xBjPW97nvrgkFmgBupRhg=s0"
                 alt="Lifestyle 1"
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
+                quality={90}
                 className="object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div className="relative aspect-[4/5] overflow-hidden mt-8 md:mt-16">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuATR20nNljYF1Vgl7yUJoDDHBhWUqnvO78GclrBLqCcJn0cnitQPWMKkYNC4J9IMjbZ58O5U7sABvvFAHuDCJrMCkW5kj48wOv-shXGYXGEgFdLSNNBbSP8DZEr_knWoYVJs7fvm7amas3cbvWamFNWbwELpq9TJ5KVNxDM_tgEW-MgdDtJ0IA9-mi8ralzjH0sMKTsLiYUh-2AWdgT9_1gs2p8t1Dr2TbQq8FA73q-fi_COc5cBQWzcb99U5rf-PCSng"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuATR20nNljYF1Vgl7yUJoDDHBhWUqnvO78GclrBLqCcJn0cnitQPWMKkYNC4J9IMjbZ58O5U7sABvvFAHuDCJrMCkW5kj48wOv-shXGYXGEgFdLSNNBbSP8DZEr_knWoYVJs7fvm7amas3cbvWamFNWbwELpq9TJ5KVNxDM_tgEW-MgdDtJ0IA9-mi8ralzjH0sMKTsLiYUh-2AWdgT9_1gs2p8t1Dr2TbQq8FA73q-fi_COc5cBQWzcb99U5rf-PCSng=s0"
                 alt="Lifestyle 2"
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
+                quality={90}
                 className="object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2MXtiZh7AP5LEgUh8wh8cn21YUoR4Fd5PjeBluaOVZ80F-SUhQTDr9bn05tY4iPsOToGAkTFO2T219WXKWEpTtTsrLSRva109tRNYpzZoCCns7wNTCMZxe2Dcjh3ktkvSZAaCZgRfYPd4wbx05lwnDu9BqL0injKdpX53oZzs_VW32vunrlYUBc8Heh6K9or9FQb0TixT3P2npmltZhTgv_KsXMphQw0Q_5-m9V-zupfxrCg5_srCmX5pXDtRP8X6mA"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2MXtiZh7AP5LEgUh8wh8cn21YUoR4Fd5PjeBluaOVZ80F-SUhQTDr9bn05tY4iPsOToGAkTFO2T219WXKWEpTtTsrLSRva109tRNYpzZoCCns7wNTCMZxe2Dcjh3ktkvSZAaCZgRfYPd4wbx05lwnDu9BqL0injKdpX53oZzs_VW32vunrlYUBc8Heh6K9or9FQb0TixT3P2npmltZhTgv_KsXMphQw0Q_5-m9V-zupfxrCg5_srCmX5pXDtRP8X6mA=s0"
                 alt="Lifestyle 3"
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
+                quality={90}
                 className="object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -486,8 +501,8 @@ export default function Home() {
               theoo
             </div>
             <p className="font-body-sm text-body-sm text-on-secondary-container">
-              Effortless beauty, consciously crafted. We believe in
-              simplicity that speaks volumes through quality.
+              Effortless beauty, consciously crafted. We believe in simplicity
+              that speaks volumes through quality.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-16">
