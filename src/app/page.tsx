@@ -22,6 +22,29 @@ const SHADES = [
   { id: "105", name: "Rosewood" },
 ];
 
+const HERO_INGREDIENTS = [
+  {
+    name: "Squalane",
+    points: ["Deeply moisturizes", "Softens lips for a fuller look"],
+  },
+  {
+    name: "Sodium Hyaluronate (Hyaluronic Acid)",
+    points: ["Locks in moisture", "Helps smooth lip texture"],
+  },
+  {
+    name: "Simmondsia Chinensis (Jojoba) Seed Oil",
+    points: ["Nourishes lips", "Helps reduce dryness"],
+  },
+  {
+    name: "Vitis Vinifera (Grape) Seed Oil",
+    points: ["Rich in antioxidants", "Helps lips look healthy"],
+  },
+  {
+    name: "Tocopheryl Acetate (Vitamin E)",
+    points: ["Nourishes and protects lips from dryness", "An antioxidant"],
+  },
+];
+
 function ShadeSwatch({ shade }: { shade: (typeof SHADES)[number] }) {
   return (
     <a
@@ -263,37 +286,35 @@ export default function Home() {
         id="ingredients"
         className="scroll-mt-24 py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-container-low"
       >
-        <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
           <div className="editorial-reveal">
             <span className="font-label-md text-label-md text-primary uppercase tracking-[0.2em] block mb-4">
               Ingredient Spotlight
             </span>
-            <h2 className="font-headline-lg text-headline-lg text-dark-accent mb-6">
-              The Alchemy of Nature
+            <h2 className="font-headline-lg text-headline-lg text-dark-accent mb-8">
+              Hero Ingredients
             </h2>
-            <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-8">
-              Our formula is a meticulous blend of cold-pressed botanical oils
-              and natural waxes. We use organic Jojoba and Rosehip seed oils to
-              mimic the skin&apos;s natural sebum, ensuring deep penetration and
-              lasting comfort without the weight of synthetic silicones.
-            </p>
-            <div className="grid grid-cols-2 gap-8">
-              <div>
-                <h4 className="font-headline-md text-headline-md text-sm uppercase mb-2">
-                  Botanical Oils
-                </h4>
-                <p className="font-body-sm text-body-sm text-on-surface-variant">
-                  Cold-pressed for maximum nutrient retention.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-headline-md text-headline-md text-sm uppercase mb-2">
-                  Natural Waxes
-                </h4>
-                <p className="font-body-sm text-body-sm text-on-surface-variant">
-                  Ethically sourced for a smooth, protective barrier.
-                </p>
-              </div>
+            <div className="space-y-6">
+              {HERO_INGREDIENTS.map((ingredient) => (
+                <div key={ingredient.name} className="flex gap-4">
+                  <Sparkles className="w-5 h-5 text-primary shrink-0 mt-1" />
+                  <div>
+                    <h4 className="font-headline-md text-headline-md text-sm uppercase mb-1">
+                      {ingredient.name}
+                    </h4>
+                    <ul className="list-disc list-inside">
+                      {ingredient.points.map((point) => (
+                        <li
+                          key={point}
+                          className="font-body-sm text-body-sm text-on-surface-variant"
+                        >
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
           <div className="editorial-reveal">
