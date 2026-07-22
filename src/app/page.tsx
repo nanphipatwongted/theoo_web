@@ -101,9 +101,30 @@ function ShadeSwatch({ shade }: { shade: (typeof SHADES)[number] }) {
   );
 }
 
+const PRODUCT_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "theoo The Mood Lip Gloss",
+  image: ["https://theoo-web.vercel.app/images/19.jpg"],
+  description:
+    "A creamy, buildable-color lip gloss that nourishes and hydrates in one swipe. Available in 5 shades.",
+  brand: { "@type": "Brand", name: "theoo" },
+  offers: {
+    "@type": "Offer",
+    url: SHOPEE_URL,
+    priceCurrency: "THB",
+    price: "299",
+    availability: "https://schema.org/InStock",
+  },
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(PRODUCT_JSON_LD) }}
+      />
       <ScrollEffects />
 
       {/* TopNavBar */}

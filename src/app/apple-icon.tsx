@@ -15,9 +15,9 @@ export default function AppleIcon() {
           justifyContent: "center",
           background: "#5F5143",
           color: "#F6F4F0",
-          fontSize: 100,
+          fontSize: 62,
           fontWeight: 700,
-          letterSpacing: "-9px",
+          letterSpacing: "-4.5px",
         }}
       >
         theoo

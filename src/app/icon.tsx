@@ -15,9 +15,9 @@ export default function Icon() {
           justifyContent: "center",
           background: "#5F5143",
           color: "#F6F4F0",
-          fontSize: 20,
+          fontSize: 13,
           fontWeight: 700,
-          letterSpacing: "-1.8px",
+          letterSpacing: "-1px",
         }}
       >
         theoo

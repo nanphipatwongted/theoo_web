@@ -19,9 +19,57 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const SITE_URL = "https://theoo-web.vercel.app";
+const TITLE = "theoo | The Mood Lip Gloss — Tinted Lip Gloss, 5 Shades";
+const DESCRIPTION =
+  "The Mood Lip Gloss by theoo: a creamy, buildable-color lip gloss that nourishes and hydrates in one swipe. 5 shades, 4.5g, ฿299. Shop on Shopee, Instagram, and TikTok.";
+
 export const metadata: Metadata = {
-  title: "theoo | The Mood Lip Gloss",
-  description: "Effortless beauty, consciously crafted.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: TITLE,
+    template: "%s | theoo",
+  },
+  description: DESCRIPTION,
+  keywords: [
+    "theoo",
+    "The Mood Lip Gloss",
+    "lip gloss",
+    "tinted lip gloss",
+    "lip care",
+    "ลิปกลอส",
+    "theoo_store.th",
+  ],
+  authors: [{ name: "theoo" }],
+  alternates: {
+    canonical: SITE_URL,
+  },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: SITE_URL,
+    siteName: "theoo",
+    type: "website",
+    locale: "th_TH",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "theoo — The Mood Lip Gloss",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/opengraph-image"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
