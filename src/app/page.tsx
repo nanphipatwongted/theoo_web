@@ -420,14 +420,14 @@ export default function Home() {
               Shop All
             </a>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-gutter">
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-gutter pb-4 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-5 md:overflow-visible">
             {SHADES.map((shade, i) => (
               <a
                 key={shade.id}
                 href={SHOPEE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block editorial-reveal"
+                className="group block shrink-0 w-[42vw] snap-start md:w-auto editorial-reveal"
                 style={{ transitionDelay: `${(i + 1) * 100}ms` }}
               >
                 <div className="relative aspect-[2/3] bg-surface-container overflow-hidden mb-4 transition-transform duration-500 group-hover:scale-105">
