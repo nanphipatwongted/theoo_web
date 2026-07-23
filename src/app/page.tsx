@@ -226,9 +226,13 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-primary animate-bounce">
+        <a
+          href="#buy"
+          aria-label="Scroll to Where to Buy"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-primary animate-bounce hover:opacity-70 transition-opacity"
+        >
           <ChevronDown className="w-6 h-6" />
-        </div>
+        </a>
       </header>
 
       {/* Philosophy & Narrative Section */}
