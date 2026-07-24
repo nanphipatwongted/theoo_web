@@ -11,9 +11,9 @@ const SHOPEE_URL = "https://s.shopee.co.th/4qEDJVMei2";
 const PRICE = "฿299";
 
 const SHADES = [
-  { id: "101", name: "Pomelo", color: "#eb6565" },
-  { id: "102", name: "Teddy", color: "#e36165" },
-  { id: "103", name: "Misty", color: "#d5575c" },
+  { id: "101", name: "Pomelo", color: "#dc7b6c" },
+  { id: "102", name: "Teddy", color: "#e17e82" },
+  { id: "103", name: "Misty", color: "#c46a6f" },
   { id: "104", name: "Brick", color: "#d44747" },
   { id: "105", name: "Rosewood", color: "#bd524d" },
 ];
