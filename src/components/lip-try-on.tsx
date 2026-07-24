@@ -235,7 +235,7 @@ export function LipTryOn() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch editorial-reveal">
           {/* Left: AR camera view */}
-          <div className="relative aspect-[4/3] md:aspect-auto md:h-full min-h-[320px] bg-surface-container overflow-hidden">
+          <div className="relative w-full aspect-[4/3] md:aspect-auto md:h-full md:min-h-[320px] bg-surface-container overflow-hidden">
             <video
               ref={videoRef}
               playsInline
