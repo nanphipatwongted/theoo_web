@@ -11,6 +11,7 @@ import {
   Sun,
 } from "lucide-react";
 import { SiInstagram, SiShopee, SiTiktok } from "react-icons/si";
+import { LipTryOn } from "@/components/lip-try-on";
 import { PageSearch } from "@/components/page-search";
 import { ScrollEffects } from "@/components/scroll-effects";
 
@@ -172,6 +173,16 @@ export default function Home() {
             <a
               data-nav-link
               className="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors pb-1 border-b border-transparent"
+              href="#try-on"
+            >
+              Try It On
+              <span className="ml-1 relative -top-2 text-[9px] font-bold text-destructive leading-none tracking-normal">
+                NEW
+              </span>
+            </a>
+            <a
+              data-nav-link
+              className="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors pb-1 border-b border-transparent"
               href="#buy"
             >
               Buy
@@ -217,9 +228,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             <a
-              href={SHOPEE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#try-on"
               className="w-1/2 md:w-auto mx-auto md:mx-0 px-10 py-4 bg-primary text-white font-label-md text-label-md tracking-widest uppercase hover:bg-dark-accent transition-all duration-500 shadow-xl text-center"
             >
               Explore Shades
@@ -486,7 +495,17 @@ export default function Home() {
               Shades
             </h2>
           </div>
-          <div className="flex flex-col items-center gap-y-8 editorial-reveal">
+          {/* Mobile: horizontal scroll, matching The First Collection */}
+          <div className="flex md:hidden overflow-x-auto snap-x snap-mandatory gap-gutter pb-4 -mx-margin-mobile px-margin-mobile editorial-reveal">
+            {SHADES.map((shade) => (
+              <div key={shade.id} className="shrink-0 snap-start">
+                <ShadeSwatch shade={shade} />
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop: 3-over-2 pyramid */}
+          <div className="hidden md:flex md:flex-col items-center gap-y-8 editorial-reveal">
             <div className="flex flex-wrap justify-center gap-x-8 gap-y-8">
               {SHADES.slice(0, 3).map((shade) => (
                 <ShadeSwatch key={shade.id} shade={shade} />
@@ -500,6 +519,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <LipTryOn />
 
       {/* Ritual of Application Section */}
       <section
