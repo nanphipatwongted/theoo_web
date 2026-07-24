@@ -85,7 +85,7 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} ${leagueSpartan.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col overflow-x-hidden">{children}</body>
     </html>
   );
 }

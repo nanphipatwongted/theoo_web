@@ -217,7 +217,7 @@ export function LipTryOn() {
   return (
     <section
       id="try-on"
-      className="scroll-mt-24 py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-container-low"
+      className="scroll-mt-24 py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-container-low overflow-hidden"
     >
       <div className="max-w-[1440px] mx-auto">
         <div className="text-center mb-16 editorial-reveal">
