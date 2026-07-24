@@ -198,13 +198,13 @@ export default function Home() {
       >
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/19.jpg"
+            src="/images/hero.jpg"
             alt="theoo Mood Lip Gloss"
             fill
             priority
             sizes="100vw"
             quality={100}
-            className="object-cover hero-zoom"
+            className="object-cover hero-zoom blur-[10px]"
           />
           <div className="absolute inset-0 bg-black/5" />
         </div>
@@ -541,7 +541,7 @@ export default function Home() {
           <div className="editorial-reveal lg:pl-12">
             <div className="relative aspect-square">
               <Image
-                src="/images/9.png"
+                src="/images/19.jpg"
                 alt="theoo product"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -608,8 +608,8 @@ export default function Home() {
               theoo
             </div>
             <p className="font-body-sm text-body-sm text-on-secondary-container">
-              Effortless, like you! The Mood Lip Gloss — nourishment and
-              color, together in one swipe.
+              Effortless, like you! The Mood Lip Gloss — nourishment and color,
+              together in one swipe.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-16">
