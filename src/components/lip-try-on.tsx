@@ -138,13 +138,24 @@ export function LipTryOn() {
     setStatus("loading");
     setErrorMsg("");
     try {
+      if (!navigator.mediaDevices?.getUserMedia) {
+        throw new Error(
+          "This browser doesn't support camera access here (getUserMedia unavailable). Try Safari or Chrome, and make sure you're on https.",
+        );
+      }
       const stream = await navigator.mediaDevices.getUserMedia({
         video: { facingMode: "user" },
       });
       const video = videoRef.current;
       if (!video) return;
       video.srcObject = stream;
-      await video.play();
+      try {
+        await video.play();
+      } catch {
+        // Some browsers (notably iOS Safari) can reject the first play()
+        // call right after getUserMedia resolves; retry once.
+        await video.play();
+      }
 
       if (!landmarkerRef.current) {
         const { FaceLandmarker, FilesetResolver } =
@@ -158,7 +169,9 @@ export function LipTryOn() {
             baseOptions: {
               modelAssetPath:
                 "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/latest/face_landmarker.task",
-              delegate: "GPU",
+              // CPU is slower but far more reliably supported across
+              // browsers (GPU/WebGL delegate is flaky on iOS Safari).
+              delegate: "CPU",
             },
             runningMode: "VIDEO",
             numFaces: 1,
@@ -170,11 +183,17 @@ export function LipTryOn() {
       renderLoop();
     } catch (err) {
       setStatus("error");
-      setErrorMsg(
-        err instanceof DOMException && err.name === "NotAllowedError"
-          ? "Camera access was denied. Allow camera permission to try shades on."
-          : "Couldn't start the camera or load the try-on model. Please try again.",
-      );
+      if (err instanceof DOMException && err.name === "NotAllowedError") {
+        setErrorMsg(
+          "Camera access was denied. Allow camera permission to try shades on.",
+        );
+      } else {
+        const detail =
+          err instanceof Error ? `${err.name}: ${err.message}` : String(err);
+        setErrorMsg(
+          `Couldn't start the camera or load the try-on model. (${detail})`,
+        );
+      }
     }
   };
 
@@ -216,8 +235,15 @@ export function LipTryOn() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch editorial-reveal">
           {/* Left: AR camera view */}
-          <div className="relative aspect-[4/3] bg-surface-container overflow-hidden">
-            <video ref={videoRef} playsInline muted className="hidden" />
+          <div className="relative aspect-[4/3] md:aspect-auto md:h-full min-h-[320px] bg-surface-container overflow-hidden">
+            <video
+              ref={videoRef}
+              playsInline
+              webkit-playsinline="true"
+              autoPlay
+              muted
+              className="hidden"
+            />
             <canvas
               ref={canvasRef}
               className={`w-full h-full object-cover ${status === "running" ? "block" : "hidden"}`}
