@@ -85,8 +85,27 @@ const ogImageURL = new URL("/og-image.png", SITE_URL);
         { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
       );
       document
-        .querySelectorAll(".editorial-reveal")
+        .querySelectorAll(".editorial-reveal, .reveal-image")
         .forEach((el) => observer.observe(el));
+
+      // Apple-style hero parallax: as the hero scrolls out of view, the
+      // background drifts and the headline/CTA lift and fade — driven by
+      // a single --hero-progress custom property (0 = top, 1 = scrolled
+      // past the hero's own height).
+      const hero = document.getElementById("product");
+      if (hero) {
+        const updateHeroProgress = () => {
+          const progress = Math.min(
+            1,
+            Math.max(0, window.scrollY / hero.offsetHeight),
+          );
+          hero.style.setProperty("--hero-progress", String(progress));
+        };
+        updateHeroProgress();
+        window.addEventListener("scroll", updateHeroProgress, {
+          passive: true,
+        });
+      }
 
       const nav = document.querySelector("nav");
       let lastScrollTop = 0;
