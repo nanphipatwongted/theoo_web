@@ -7,7 +7,6 @@ import type {
   NormalizedLandmark,
 } from "@mediapipe/tasks-vision";
 
-const SHOPEE_URL = "https://s.shopee.co.th/4qEDJVMei2";
 const PRICE = "฿299";
 
 const SHADES = [
