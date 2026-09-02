@@ -1,0 +1,24 @@
+---
+const SHOPEE_URL = "https://s.shopee.co.th/4qEDJVMei2";
+
+interface Props {
+  shade: { id: string; name: string };
+}
+const { shade } = Astro.props;
+---
+
+<a href={SHOPEE_URL} target="_blank" rel="noopener noreferrer" class="group block">
+  <div
+    class="relative w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 overflow-hidden shadow-xl transition-transform duration-500 group-hover:scale-110 group-hover:z-10"
+  >
+    <img
+      src={`/images/swatch${shade.id}.PNG`}
+      alt={`${shade.name} swatch`}
+      loading="lazy"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+  </div>
+  <p class="mt-3 text-center font-label-md text-label-md text-on-surface-variant">
+    {shade.id}
+  </p>
+</a>

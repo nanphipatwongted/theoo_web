@@ -1,0 +1,612 @@
+---
+import {
+  ChevronDown,
+  Droplet,
+  Droplets,
+  Heart,
+  Leaf,
+  Shield,
+  ShoppingBag,
+  Sparkles,
+  Sun,
+} from "lucide-react";
+import { SiInstagram, SiShopee, SiTiktok } from "react-icons/si";
+import Layout from "../layouts/Layout.astro";
+import ShadeSwatch from "../components/ShadeSwatch.astro";
+import { LipTryOn } from "../components/lip-try-on";
+import { PageSearch } from "../components/page-search";
+
+const SHOPEE_URL = "https://s.shopee.co.th/4qEDJVMei2";
+
+const CHANNELS = [
+  {
+    name: "Instagram",
+    handle: "theoo_store.th",
+    href: "https://www.instagram.com/theoo_store.th?igsh=OGUwNHZxZXFhcXB3&utm_source=qr",
+    icon: SiInstagram,
+  },
+  {
+    name: "Shopee",
+    handle: "theoo_store.th",
+    href: SHOPEE_URL,
+    icon: SiShopee,
+  },
+  {
+    name: "TikTok",
+    handle: "theoo_store.th",
+    href: "https://www.tiktok.com/@theoo_store.th",
+    icon: SiTiktok,
+  },
+];
+
+const PRICE = "฿299";
+const NET_WEIGHT = "4.5g";
+
+const SHADES = [
+  { id: "101", name: "Pomelo" },
+  { id: "102", name: "Teddy" },
+  { id: "103", name: "Misty" },
+  { id: "104", name: "Brick" },
+  { id: "105", name: "Rosewood" },
+];
+
+const HERO_INGREDIENTS = [
+  {
+    name: "Squalane",
+    points: ["Deeply moisturizes", "Softens lips for a fuller look"],
+    icon: Droplet,
+  },
+  {
+    name: "Sodium Hyaluronate (Hyaluronic Acid)",
+    points: ["Locks in moisture", "Helps smooth lip texture"],
+    icon: Droplets,
+  },
+  {
+    name: "Simmondsia Chinensis (Jojoba) Seed Oil",
+    points: ["Nourishes lips", "Helps reduce dryness"],
+    icon: Leaf,
+  },
+  {
+    name: "Vitis Vinifera (Grape) Seed Oil",
+    points: ["Rich in antioxidants", "Helps lips look healthy"],
+    icon: Shield,
+  },
+  {
+    name: "Tocopheryl Acetate (Vitamin E)",
+    points: ["Nourishes and protects lips from dryness", "An antioxidant"],
+    icon: Sun,
+  },
+];
+
+const PRODUCT_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "theoo The Mood Lip Gloss",
+  image: ["https://theoo-web.vercel.app/images/19.jpg"],
+  description:
+    "A creamy, buildable-color lip gloss that nourishes and hydrates in one swipe. Available in 5 shades.",
+  brand: { "@type": "Brand", name: "theoo" },
+  offers: {
+    "@type": "Offer",
+    url: SHOPEE_URL,
+    priceCurrency: "THB",
+    price: "299",
+    availability: "https://schema.org/InStock",
+  },
+};
+---
+
+<Layout>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(PRODUCT_JSON_LD)}
+  />
+
+  <!-- TopNavBar -->
+  <nav class="fixed top-0 w-full z-50 nav-glass transition-transform duration-500">
+    <div class="flex justify-between items-center w-full px-margin-desktop py-6 max-w-[1440px] mx-auto">
+      <div class="font-headline-lg text-headline-lg tracking-[-0.094em] text-on-surface">
+        theoo
+      </div>
+      <div class="hidden md:flex items-center gap-8">
+        <a
+          data-nav-link
+          class="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors pb-1 border-b border-transparent"
+          href="#product"
+        >
+          Product
+        </a>
+        <a
+          data-nav-link
+          class="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors pb-1 border-b border-transparent"
+          href="#philosophy"
+        >
+          Philosophy
+        </a>
+        <a
+          data-nav-link
+          class="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors pb-1 border-b border-transparent"
+          href="#ingredients"
+        >
+          Ingredients
+        </a>
+        <a
+          data-nav-link
+          class="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors pb-1 border-b border-transparent"
+          href="#collection"
+        >
+          Collection
+        </a>
+        <a
+          data-nav-link
+          class="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors pb-1 border-b border-transparent"
+          href="#shades"
+        >
+          Shades
+        </a>
+        <a
+          data-nav-link
+          class="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors pb-1 border-b border-transparent"
+          href="#try-on"
+        >
+          Try It On
+          <span class="ml-1 relative -top-2 text-[9px] font-bold text-destructive leading-none tracking-normal">
+            NEW
+          </span>
+        </a>
+        <a
+          data-nav-link
+          class="font-label-md text-label-md text-on-surface/80 hover:text-on-surface transition-colors pb-1 border-b border-transparent"
+          href="#buy"
+        >
+          Buy
+        </a>
+      </div>
+      <div class="flex items-center gap-6">
+        <PageSearch client:load />
+        <a
+          href={SHOPEE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:opacity-70 transition-opacity duration-300"
+        >
+          <ShoppingBag className="w-6 h-6" />
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header
+    id="product"
+    class="scroll-mt-24 relative w-full h-screen min-h-[700px] flex items-center justify-center overflow-hidden"
+  >
+    <div class="absolute inset-0 z-0">
+      <img
+        src="/images/hero.jpg"
+        alt="theoo Mood Lip Gloss"
+        class="absolute inset-0 w-full h-full object-cover hero-zoom blur-[10px]"
+      />
+      <div class="absolute inset-0 bg-black/5"></div>
+    </div>
+    <div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop max-w-4xl">
+      <h1 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-4 uppercase tracking-widest drop-shadow-sm text-white">
+        The Mood Lip Gloss
+      </h1>
+      <p class="font-body-lg text-body-sm md:text-body-lg text-white mb-8 max-w-lg mx-auto tracking-wide font-medium">
+        Nourishment and color, together in one swipe.
+      </p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a
+          href="#try-on"
+          class="w-1/2 md:w-auto mx-auto md:mx-0 px-10 py-4 bg-primary text-white font-label-md text-label-md tracking-widest uppercase hover:bg-dark-accent transition-all duration-500 shadow-xl text-center"
+        >
+          Explore Shades
+        </a>
+      </div>
+    </div>
+    <a
+      href="#buy"
+      aria-label="Scroll to Where to Buy"
+      class="absolute bottom-10 left-1/2 -translate-x-1/2 text-primary animate-bounce hover:opacity-70 transition-opacity"
+    >
+      <ChevronDown className="w-6 h-6" />
+    </a>
+  </header>
+
+  <!-- Philosophy & Narrative Section -->
+  <section
+    id="philosophy"
+    class="scroll-mt-24 py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-container-low"
+  >
+    <div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+      <div class="md:col-span-5 editorial-reveal">
+        <h2 class="font-headline-lg text-headline-lg mb-stack-sm text-dark-accent">
+          Pure care by nature
+        </h2>
+        <div class="w-16 h-[2px] bg-primary mb-stack-md"></div>
+        <div class="space-y-4">
+          <p class="font-body-md text-body-md leading-relaxed text-on-surface-variant">
+            At theoo, we believe that beauty should be a grounding
+            experience. Our commitment to clean beauty means every formula
+            is stripped of the unnecessary and enriched with only what
+            serves your skin's health.
+          </p>
+          <p class="font-body-md text-body-md leading-relaxed text-on-surface-variant">
+            We source the world's finest cold-pressed botanicals,
+            ensuring each application delivers a potent dose of
+            nature's restorative power. No parabens, no silicones—just
+            pure, intentional care that respects both your biology and our
+            planet.
+          </p>
+        </div>
+        <button class="mt-8 font-label-md text-label-md uppercase tracking-widest border-b-2 border-primary-container pb-1 hover:border-primary transition-all">
+          Our Transparency Report
+        </button>
+      </div>
+      <div class="md:col-span-7 grid grid-cols-2 gap-4 editorial-reveal" style="transition-delay: 200ms">
+        <div class="relative aspect-[4/5] shadow-sm overflow-hidden">
+          <img
+            src="/images/pure_forest.jpg"
+            alt="theoo skincare texture"
+            loading="lazy"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+        </div>
+        <div class="relative aspect-[4/5] shadow-sm overflow-hidden mt-12">
+          <img
+            src="/images/pure_water.jpg"
+            alt="theoo product detail"
+            loading="lazy"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Benefits Section -->
+  <section class="py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-container-lowest">
+    <div class="max-w-[1440px] mx-auto">
+      <div class="text-center mb-16 editorial-reveal">
+        <h2 class="font-headline-lg text-headline-lg text-dark-accent mb-2">
+          The Difference is Felt
+        </h2>
+        <p class="font-label-md text-label-md text-primary tracking-widest uppercase">
+          Care and color, in one swipe
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center editorial-reveal">
+        <div class="flex flex-col items-center">
+          <div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-6 text-primary">
+            <Droplet className="w-7 h-7" />
+          </div>
+          <h3 class="font-headline-md text-headline-md mb-3">Creamy &amp; Comfortable</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant max-w-[280px]">
+            A rich, moisturizing gloss that glides on smoothly and feels
+            comfortable on the lips — no stickiness.
+          </p>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-6 text-primary">
+            <Sparkles className="w-7 h-7" />
+          </div>
+          <h3 class="font-headline-md text-headline-md mb-3">Buildable Color Payoff</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant max-w-[280px]">
+            Delivers noticeable color that complements your natural lip tone
+            — no lipstick needed underneath.
+          </p>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-6 text-primary">
+            <Heart className="w-7 h-7" />
+          </div>
+          <h3 class="font-headline-md text-headline-md mb-3">Plump, Healthy Glow</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant max-w-[280px]">
+            Nourishes and hydrates for fuller-looking, healthy lips with a
+            glossy, radiant finish.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ingredient Spotlight -->
+  <section
+    id="ingredients"
+    class="scroll-mt-24 py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-container-low"
+  >
+    <div class="max-w-[1440px] mx-auto">
+      <div class="text-center mb-16 editorial-reveal">
+        <span class="font-label-md text-label-md text-primary uppercase tracking-[0.2em] block mb-2">
+          Ingredient Spotlight
+        </span>
+        <h2 class="font-headline-lg text-headline-lg text-dark-accent">Hero Ingredients</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 editorial-reveal">
+        <div class="relative aspect-square bg-surface-container overflow-hidden sm:col-span-2 lg:col-span-1">
+          <img
+            src="/images/5.jpg"
+            alt="Lip gloss swatches"
+            loading="lazy"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+        </div>
+        {HERO_INGREDIENTS.map((ingredient) => (
+          <div class="bg-surface-container-lowest p-6 md:p-8 flex flex-col">
+            <div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary mb-4">
+              <ingredient.icon className="w-6 h-6" />
+            </div>
+            <h4 class="font-headline-md text-headline-md uppercase mb-3">{ingredient.name}</h4>
+            <ul class="list-disc list-inside space-y-1 mt-auto">
+              {ingredient.points.map((point) => (
+                <li class="font-body-sm text-body-sm text-on-surface-variant">{point}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Collection Grid -->
+  <section
+    id="collection"
+    class="scroll-mt-24 py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface"
+  >
+    <div class="max-w-[1440px] mx-auto">
+      <div class="flex justify-between items-end mb-12 editorial-reveal">
+        <div>
+          <span class="font-label-md text-label-md text-primary uppercase tracking-[0.2em] block mb-2">
+            The First Collection
+          </span>
+          <h2 class="font-headline-lg text-headline-lg text-dark-accent">The Mood Lip Gloss</h2>
+          <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+            5 shades · {NET_WEIGHT} · {PRICE}
+          </p>
+        </div>
+        <a
+          class="font-label-md text-label-md text-primary-container hover:text-primary transition-colors underline underline-offset-8"
+          href={SHOPEE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Shop All
+        </a>
+      </div>
+      <div class="flex overflow-x-auto snap-x snap-mandatory gap-gutter pb-4 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-5 md:overflow-visible">
+        {SHADES.map((shade, i) => (
+          <a
+            href={SHOPEE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group block shrink-0 w-[42vw] snap-start md:w-auto editorial-reveal"
+            style={`transition-delay: ${(i + 1) * 100}ms`}
+          >
+            <div class="relative aspect-[2/3] bg-surface-container overflow-hidden mb-4 transition-transform duration-500 group-hover:scale-105">
+              <img
+                src={`/images/${shade.id}.png`}
+                alt={`Shade ${shade.id} - ${shade.name}`}
+                loading="lazy"
+                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0"
+              />
+              <img
+                src={`/images/swatch${shade.id}.PNG`}
+                alt={`${shade.name} swatch`}
+                loading="lazy"
+                class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+              />
+            </div>
+            <div class="flex flex-col gap-2 p-2">
+              <div class="flex justify-between">
+                <div class="font-light text-headline-md text-md mb-1 uppercase tracking-wider">
+                  {shade.id}
+                </div>
+                <h3 class="font-bold text-headline-md text-sm mb-1 uppercase tracking-wider">
+                  {shade.name}
+                </h3>
+              </div>
+              <p class="font-body-sm text-body-sm text-on-surface-variant text-right">{PRICE}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Shades Palette -->
+  <section
+    id="shades"
+    class="scroll-mt-24 py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-container-lowest overflow-hidden"
+  >
+    <div class="max-w-[1440px] mx-auto">
+      <div class="text-center mb-16 editorial-reveal">
+        <span class="font-label-md text-label-md text-primary uppercase tracking-[0.2em] block mb-2">
+          Find Your Mood
+        </span>
+        <h2 class="font-headline-lg text-headline-lg text-dark-accent">Shades</h2>
+      </div>
+      <!-- Mobile: horizontal scroll, matching The First Collection -->
+      <div class="flex md:hidden overflow-x-auto snap-x snap-mandatory gap-gutter pb-4 -mx-margin-mobile px-margin-mobile editorial-reveal">
+        {SHADES.map((shade) => (
+          <div class="shrink-0 snap-start">
+            <ShadeSwatch shade={shade} />
+          </div>
+        ))}
+      </div>
+
+      <!-- Desktop: 3-over-2 pyramid -->
+      <div class="hidden md:flex md:flex-col items-center gap-y-8 editorial-reveal">
+        <div class="flex flex-wrap justify-center gap-x-8 gap-y-8">
+          {SHADES.slice(0, 3).map((shade) => (
+            <ShadeSwatch shade={shade} />
+          ))}
+        </div>
+        <div class="flex flex-wrap justify-center gap-x-8 gap-y-8">
+          {SHADES.slice(3, 5).map((shade) => (
+            <ShadeSwatch shade={shade} />
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <LipTryOn client:visible />
+
+  <!-- Where to Buy Section -->
+  <section
+    id="buy"
+    class="scroll-mt-24 py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-container-low overflow-hidden"
+  >
+    <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="editorial-reveal">
+        <h2 class="font-headline-lg text-headline-lg mb-4 text-dark-accent">Where to Buy</h2>
+        <p class="font-label-md text-label-md text-primary uppercase tracking-widest mb-8">
+          Official Channels
+        </p>
+        <div class="space-y-6">
+          {CHANNELS.map((channel) => (
+            <a
+              href={channel.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group flex items-center gap-6"
+            >
+              <div class="w-16 h-16 shrink-0 rounded-full bg-surface-container flex items-center justify-center text-primary transition-transform duration-500 group-hover:scale-110">
+                <channel.icon className="w-7 h-7" />
+              </div>
+              <div>
+                <h4 class="font-headline-md text-headline-md mb-1 group-hover:text-primary transition-colors">
+                  {channel.name}
+                </h4>
+                <p class="font-body-md text-on-surface-variant">{channel.handle}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+      <div class="editorial-reveal lg:pl-12">
+        <div class="relative aspect-square">
+          <img
+            src="/images/19.jpg"
+            alt="theoo product"
+            loading="lazy"
+            class="absolute inset-0 w-full h-full object-cover shadow-2xl z-10"
+          />
+          <div class="absolute -bottom-8 -right-8 w-64 h-64 bg-primary-container/20 -z-0"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community & Ritual -->
+  <section class="py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-container-lowest">
+    <div class="max-w-[1440px] mx-auto">
+      <div class="text-center mb-12 editorial-reveal">
+        <h2 class="font-headline-lg text-headline-lg text-dark-accent mb-2">Community &amp; Ritual</h2>
+        <p class="font-label-md text-label-md text-primary tracking-widest uppercase">
+          Shared moments of minimalism
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter editorial-reveal">
+        <div class="relative aspect-[4/5] overflow-hidden">
+          <img
+            src="/images/7.jpg"
+            alt="Lifestyle 1"
+            loading="lazy"
+            class="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+          />
+        </div>
+        <div class="relative aspect-[4/5] overflow-hidden mt-8 md:mt-16">
+          <img
+            src="/images/lifestyle-2.jpg"
+            alt="Lifestyle 2"
+            loading="lazy"
+            class="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+          />
+        </div>
+        <div class="relative aspect-[4/5] overflow-hidden">
+          <img
+            src="/images/ingredients.jpg"
+            alt="Lifestyle 3"
+            loading="lazy"
+            class="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-surface-dim pt-stack-lg pb-stack-md border-t border-outline-variant">
+    <div class="max-w-[1440px] mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-start gap-stack-md">
+      <div class="max-w-sm">
+        <div class="font-headline-md text-headline-md text-primary mb-4">theoo</div>
+        <p class="font-body-sm text-body-sm text-on-secondary-container">
+          Effortless, like you! The Mood Lip Gloss — nourishment and color,
+          together in one swipe.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-16">
+        <div class="flex flex-col gap-3">
+          <h5 class="font-label-md text-label-md text-dark-accent uppercase">Shop</h5>
+          <a
+            class="font-body-sm text-body-sm text-on-secondary-container hover:text-primary hover:underline underline-offset-4 transition-all"
+            href="#product"
+          >
+            Product
+          </a>
+          <a
+            class="font-body-sm text-body-sm text-on-secondary-container hover:text-primary hover:underline underline-offset-4 transition-all"
+            href="#ingredients"
+          >
+            Ingredients
+          </a>
+          <a
+            class="font-body-sm text-body-sm text-on-secondary-container hover:text-primary hover:underline underline-offset-4 transition-all"
+            href="#collection"
+          >
+            Collection
+          </a>
+          <a
+            class="font-body-sm text-body-sm text-on-secondary-container hover:text-primary hover:underline underline-offset-4 transition-all"
+            href="#shades"
+          >
+            Shades
+          </a>
+        </div>
+        <div class="flex flex-col gap-3">
+          <h5 class="font-label-md text-label-md text-dark-accent uppercase">Connect</h5>
+          {CHANNELS.map((channel) => (
+            <a
+              class="font-body-sm text-body-sm text-on-secondary-container hover:text-primary hover:underline underline-offset-4 transition-all"
+              href={channel.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {channel.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+    <div class="max-w-[1440px] mx-auto px-margin-desktop mt-stack-lg pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="font-label-md text-label-md text-on-secondary-container">
+        © 2026 theoo. Effortless, like you!
+      </p>
+      <div class="flex gap-6">
+        {CHANNELS.map((channel) => (
+          <a
+            class="text-on-secondary-container hover:text-primary transition-colors"
+            href={channel.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={channel.name}
+          >
+            <channel.icon className="w-5 h-5" />
+          </a>
+        ))}
+      </div>
+    </div>
+  </footer>
+</Layout>

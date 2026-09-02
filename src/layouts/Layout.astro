@@ -1,0 +1,154 @@
+---
+import "@fontsource/poppins/300.css";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/600.css";
+import "@fontsource/league-spartan/400.css";
+import "@fontsource/league-spartan/600.css";
+import "@fontsource/league-spartan/700.css";
+import "@fontsource/league-spartan/800.css";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const SITE_URL = "https://theoo-web.vercel.app";
+const DEFAULT_TITLE =
+  "theoo | The Mood Lip Gloss — Tinted Lip Gloss, 5 Shades";
+const DEFAULT_DESCRIPTION =
+  "The Mood Lip Gloss by theoo: a creamy, buildable-color lip gloss that nourishes and hydrates in one swipe. 5 shades, 4.5g, ฿299. Shop on Shopee, Instagram, and TikTok.";
+
+const { title = DEFAULT_TITLE, description = DEFAULT_DESCRIPTION } =
+  Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, SITE_URL);
+const ogImageURL = new URL("/og-image.png", SITE_URL);
+---
+
+<!doctype html>
+<html lang="en" class="h-full antialiased scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="theoo, The Mood Lip Gloss, lip gloss, tinted lip gloss, lip care, ลิปกลอส, theoo_store.th"
+    />
+    <meta name="author" content="theoo" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="theoo" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="th_TH" />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="theoo — The Mood Lip Gloss" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <!-- Icons -->
+    <link rel="icon" href="/icon.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-icon.png" sizes="180x180" />
+
+    <!-- Google Search Console -->
+    <meta
+      name="google-site-verification"
+      content="GNAWZ93GhmW5dWSOiMWQgq2kIywqPRNZe0k4vZKkO_M"
+    />
+  </head>
+  <body class="min-h-full flex flex-col overflow-x-hidden">
+    <slot />
+    <script>
+      // Reveal-on-scroll, nav hide/show, and scroll-spy active-link
+      // highlighting. Plain DOM script (no framework needed) — mirrors the
+      // previous React ScrollEffects component 1:1.
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) entry.target.classList.add("active");
+          }
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+      );
+      document
+        .querySelectorAll(".editorial-reveal")
+        .forEach((el) => observer.observe(el));
+
+      const nav = document.querySelector("nav");
+      let lastScrollTop = 0;
+      let suppressHideUntil = 0;
+      const onScroll = () => {
+        const scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        if (nav && Date.now() > suppressHideUntil) {
+          (nav as HTMLElement).style.transform =
+            scrollTop > lastScrollTop && scrollTop > 100
+              ? "translateY(-100%)"
+              : "translateY(0)";
+        }
+        lastScrollTop = scrollTop;
+      };
+      window.addEventListener("scroll", onScroll);
+
+      const onNavLinkClick = () => {
+        suppressHideUntil = Date.now() + 1000;
+        if (nav) (nav as HTMLElement).style.transform = "translateY(0)";
+      };
+      const navLinks = Array.from(
+        nav?.querySelectorAll("[data-nav-link]") ?? [],
+      );
+      navLinks.forEach((link) =>
+        link.addEventListener("click", onNavLinkClick),
+      );
+
+      const ACTIVE_CLASSES = ["text-primary", "border-primary"];
+      const INACTIVE_CLASSES = ["text-on-surface/80", "border-transparent"];
+      const setActiveLink = (id: string | null) => {
+        navLinks.forEach((link) => {
+          const isMatch = id !== null && link.getAttribute("href") === `#${id}`;
+          link.classList.remove(...(isMatch ? INACTIVE_CLASSES : ACTIVE_CLASSES));
+          link.classList.add(...(isMatch ? ACTIVE_CLASSES : INACTIVE_CLASSES));
+        });
+      };
+
+      const sectionIds = Array.from(
+        new Set(
+          navLinks
+            .map((link) => link.getAttribute("href"))
+            .filter((href): href is string => !!href?.startsWith("#"))
+            .map((href) => href.slice(1)),
+        ),
+      );
+      const sections = sectionIds
+        .map((id) => document.getElementById(id))
+        .filter((el): el is HTMLElement => !!el);
+
+      const sectionObserver = new IntersectionObserver(
+        (entries) => {
+          const visible = entries.find((entry) => entry.isIntersecting);
+          if (visible) setActiveLink(visible.target.id);
+        },
+        { rootMargin: "-45% 0px -50% 0px", threshold: 0 },
+      );
+      sections.forEach((el) => sectionObserver.observe(el));
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY < 50) setActiveLink(null);
+      });
+    </script>
+  </body>
+</html>

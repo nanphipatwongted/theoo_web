@@ -1,5 +1,3 @@
-"use client";
-
 import { Camera, Loader2, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import type {
